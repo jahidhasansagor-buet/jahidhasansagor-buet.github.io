@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research — Md Jahid Hasan Sagor</title>
-<meta name="description" content="Doctoral research on near-field radiative heat transfer and first-principles temperature-dependent material properties.">
+<meta name="description" content="Near-field radiative heat transfer and first-principles temperature-dependent material properties. Published in Physical Review B.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,45 +27,114 @@
 
 <div class="page-head wrap">
   <h1>Research</h1>
-  <p>Predicting heat transfer where classical models fail — from quantum effects at sub-nanometer gaps to material properties at extreme temperatures.</p>
+  <p>I predict heat transfer where classical models fail. Three first-author papers, one question: what really happens when heat crosses a nanoscale gap at real operating temperatures?</p>
 </div>
 
 <section>
   <div class="wrap">
-    <h2>The problem</h2>
-    <p class="lede">When two surfaces are brought within nanometers of each other, radiative heat transfer can exceed the classical blackbody limit by orders of magnitude. At sub-nanometer separations, even fluctuational electrodynamics stops being sufficient, and a full quantum-mechanical treatment is required. At the same time, most thermal analyses use room-temperature material properties — even for systems operating at hundreds or thousands of kelvin.</p>
-    <p class="lede">My doctoral work addresses both gaps. Using the non-equilibrium Green's function (NEGF) formalism and first-principles calculations, I model heat transfer in the extreme near-field regime with material properties computed as functions of temperature. One key result: using room-temperature properties can underpredict thermal conductance by 32–43% at 1200&nbsp;K — a significant error for the design of high-temperature energy systems.</p>
-  </div>
-</section>
+    <h2>Ph.D. research</h2>
 
-<section>
-  <div class="wrap">
-    <h2>What I work on</h2>
-    <div class="research-topics">
-      <div class="topic">
-        <h3>Extreme near-field heat transfer</h3>
-        <p>Modeling phonon and photon thermal transport across sub-nanometer vacuum gaps using the NEGF formalism and fluctuational electrodynamics.</p>
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">Room-temperature material data breaks down at high temperature. Here is by how much.</div>
+      <div class="paper-ref">Effect of Temperature-Induced Dielectric Response on Radiative Heat Transfer in the Extreme Near-Field Regime · Physical Review B <span class="status">(under review)</span></div>
+
+      <h4>Problem</h4>
+      <p>Every prediction of nanoscale thermal radiation depends on one material input: the dielectric function. The whole field computes it at 0&nbsp;K, then applies it to systems running at 1000&nbsp;K. Nobody had measured the cost of that shortcut.</p>
+
+      <h4>What I did</h4>
+      <p>Computed graphene's dielectric function at its actual temperature, 300 to 1200&nbsp;K, from first principles, with phonon excitations and anharmonicity included. Fed it into NEGF heat transfer calculations.</p>
+
+      <h4>Result</h4>
+      <p>The 0&nbsp;K shortcut underpredicts radiative conductance by 32–43% at 1200&nbsp;K. Anharmonic phonons alone account for up to 25.6% at 750&nbsp;K. Temperature-true properties are not a refinement. They are the difference between right and wrong.</p>
+
+      <div class="paper-figures">
+        <figure>
+          <img src="figures/enfrht-system.png" alt="Two media at slightly different temperatures separated by a vacuum gap, exchanging radiative heat">
+          <figcaption>The system: two media, an atomic-scale vacuum gap, heat crossing by thermal radiation.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/enfrht-conductance.png" alt="Radiative conductance versus gap size computed with 0 K, 300 K, and 1200 K dielectric functions">
+          <figcaption>Same material, three property datasets. The 0&nbsp;K curve misses the 1200&nbsp;K answer badly.</figcaption>
+        </figure>
       </div>
-      <div class="topic">
-        <h3>Temperature-dependent optical properties</h3>
-        <p>First-principles dielectric functions of graphene, silicon, and gold at finite temperature, computed with Quantum ESPRESSO and Yambo using density functional theory and many-body perturbation theory.</p>
-      </div>
-      <div class="topic">
-        <h3>Phonons and anharmonicity</h3>
-        <p>Capturing how lattice vibrations reshape optical response at finite temperature, including anharmonic effects through special-displacement methods.</p>
-      </div>
-      <div class="topic">
-        <h3>Validation and high-performance computing</h3>
-        <p>Large-scale ab initio simulations on Purdue's Anvil supercomputer and University of Maine clusters, with model predictions validated against published experimental measurements.</p>
-      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> NEGF, DFT, anharmonic special displacement method, Quantum ESPRESSO, Yambo, HPC</p>
     </div>
+    <!-- ===== PAPER END ===== -->
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">One workflow. Any material, any temperature, full infrared response.</div>
+      <div class="paper-ref">A Comprehensive Framework for Predicting the Infrared Dielectric Function at Finite Temperatures from First Principles <span class="status">(in preparation)</span></div>
+
+      <h4>Problem</h4>
+      <p>The infrared dielectric function drives thermal radiation, sensing, and optoelectronics. Measuring it at every temperature is impractical. Computing it usually stops at 0&nbsp;K.</p>
+
+      <h4>What I did</h4>
+      <p>Built a validated first-principles pipeline: Quantum ESPRESSO electronic structure on thermally displaced atoms, Yambo many-body calculations on top. Handles metals, semiconductors, and 2D materials, with harmonic and anharmonic lattice effects.</p>
+
+      <h4>Result</h4>
+      <p>Tested on graphene, silicon, and gold. Computed silicon absorption at 300&nbsp;K lands on the experimental data. The static-lattice calculation misses everything below the band gap. The output is temperature-resolved dielectric data that heat transfer models can use directly.</p>
+
+      <div class="paper-figures">
+        <figure>
+          <img src="figures/epsilon-validation.png" alt="Computed silicon absorption at 300 K matching experimental data where the static lattice calculation fails">
+          <figcaption>Computed at 300&nbsp;K (blue) vs. experiment (red). The static-lattice curve (purple) fails below the gap.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/epsilon-temperature.png" alt="Imaginary part of the silicon dielectric function from 0 K to 750 K">
+          <figcaption>Silicon's optical response from 0 to 750&nbsp;K. This shift is what the framework captures.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> DFT, DFPT phonons, many-body perturbation theory, SDM/ASDM, Quantum ESPRESSO, EPW, Yambo, HPC</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">Heat jumps across gaps smaller than an atom. First results for 2D materials.</div>
+      <div class="paper-ref">Phonon Thermal Transport between Two in-Plane, Two-Dimensional Nanoribbons in the Extreme Near-Field Regime · Physical Review B 109, 235411 (2024) · <a href="https://doi.org/10.1103/PhysRevB.109.235411">DOI</a></div>
+
+      <h4>Problem</h4>
+      <p>At sub-nanometer separations, lattice vibrations carry heat straight across a vacuum gap. This sets thermal limits in heat-assisted magnetic recording and scanning probe microscopy, and it controls how cracks and voids block heat in materials. For 2D materials, no one had the numbers.</p>
+
+      <h4>What I did</h4>
+      <p>Modeled phonon conductance between graphene and silicene nanoribbons with the atomistic Green's function method, verified against three independent published benchmarks first.</p>
+
+      <h4>Result</h4>
+      <p>A 0.2&nbsp;Å gap, one fifth of a bond length, already cuts conductance by over an order of magnitude. The decay is exponential in three regimes set by the interatomic forces: e<sup>−10.0d</sup>, e<sup>−2.0d</sup>, then e<sup>−1.3d</sup>. Silicene overtakes graphene beyond 0.8&nbsp;Å because of its longer bonds.</p>
+
+      <div class="paper-figures">
+        <figure>
+          <img src="figures/prb2024-system.png" alt="Two in-plane graphene nanoribbons separated by a vacuum gap, with graphene and silicene lattice structures">
+          <figcaption>Two 2D nanoribbons, one sub-nanometer gap, solved with the atomistic Green's function method.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/prb2024-regimes.png" alt="Phonon conductance versus gap size showing three exponential decay regimes">
+          <figcaption>The key result: three exponential decay regimes, each governed by a different interatomic force.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> Atomistic Green's function method, Tersoff and Lennard-Jones potentials, MATLAB, HPC</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Earlier research: computational fluid dynamics</h2>
-    <p class="lede">At BUET, working with Dr. Sumon Saha, I performed CFD simulations of single-phase convective, conjugate, and natural/mixed convection heat transfer in cavity-based systems — rotating cylinders, heat-generating bodies, nanofluids, and coupled solid–fluid domains. I solved the Navier–Stokes and energy equations with the finite element method, ran mesh sensitivity and verification studies, and analyzed velocity fields, temperature distributions, and Nusselt numbers. This work produced two Q1 journal papers and four conference papers, and I mentored undergraduate researchers through the full CFD workflow.</p>
+    <h2>Prior research: CFD</h2>
+
+    <div class="paper">
+      <div class="paper-title">Convective heat transfer in complex enclosures</div>
+      <div class="paper-ref">CFD &amp; Heat Transfer Research Group, BUET, with Dr. Sumon Saha · two Q1 journal papers, four conference papers · <a href="publications.html">See publications</a></div>
+      <p>Finite element simulations of natural, mixed, and conjugate convection in cavities with rotating cylinders, heat-generating bodies, and nanofluids. Quantified how geometry, rotation, heating conditions, and nanofluid loading change thermal performance. Published in International Communications in Heat and Mass Transfer and Journal of Heat Transfer. Mentored undergraduates through the full CFD workflow.</p>
+      <p class="paper-tools"><strong>Tools:</strong> Finite element method, CFD, COMSOL Multiphysics, MATLAB</p>
+    </div>
+
   </div>
 </section>
 
@@ -73,10 +142,10 @@
   <div class="wrap">
     <h2>Funding and presentations</h2>
     <ul class="plain-list">
-      <li>Doctoral research funded by the National Science Foundation (NSF)</li>
+      <li>Doctoral research funded by the National Science Foundation</li>
       <li>Graduate Student Government Individual Grant Award, University of Maine, 2026</li>
-      <li>ASME IMECE 2023 — New Orleans, USA (travel funded through NSF grant)</li>
-      <li>8th BSME International Conference 2018 — Dhaka, Bangladesh</li>
+      <li>ASME IMECE 2023, New Orleans</li>
+      <li>8th BSME International Conference 2018, Dhaka</li>
     </ul>
   </div>
 </section>
