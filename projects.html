@@ -120,6 +120,11 @@ p + p { margin-top: 0.9rem; }
 .project-links { margin-top: 0.7rem; font-size: 0.9rem; }
 .project-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
 .project-links a:hover, .project-links a:focus-visible { text-decoration: underline; }
+.project-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1rem 0 0.2rem; }
+.project-figures figure { margin: 0; }
+.project-figures img, .project-figures iframe { width: 100%; height: 220px; border: 1px solid var(--line); border-radius: 4px; background: #fff; display: block; }
+.project-figures img { object-fit: contain; padding: 0.5rem; box-sizing: border-box; }
+.project-figures figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
 
 /* ---------- Research paper entries ---------- */
 .paper { margin-bottom: 3.2rem; max-width: 52rem; }
@@ -179,6 +184,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
   .hero h1 { font-size: 2.1rem; }
   .page-head h1 { font-size: 1.8rem; }
   .project { padding: 1.2rem 1.2rem; }
+  .project-figures { grid-template-columns: 1fr; }
 }
 
 </style>
@@ -252,6 +258,22 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <h3>Automatic Juice Making Machine</h3>
       <div class="project-context">BUET</div>
       <p>Designed and fabricated a machine for effortless lime juice extraction using a rotating squeezing mechanism. Rotating parts were designed in SolidWorks and manufactured by molding and aluminium casting in the BUET foundry lab, followed by functional testing of the working prototype.</p>
+
+      <div class="project-figures">
+        <figure>
+          <img src="figures/juice-rotating-parts.png" alt="SolidWorks model of the rotating squeezing part of the juice machine">
+          <figcaption>The rotating squeezing part, designed in SolidWorks before casting.</figcaption>
+        </figure>
+        <figure>
+          <iframe src="https://drive.google.com/file/d/1RB_dKaMb8zN7mepKtaa1tOMWfE3xG2wM/preview" title="Automatic juice machine — fabricated prototype" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+          <figcaption>The fabricated machine: cast aluminium parts assembled on the frame.</figcaption>
+        </figure>
+        <figure>
+          <iframe src="https://drive.google.com/file/d/1wG6ZFQpPD4jLIzJGYAm4lbnNQ1_BDub2/preview" title="Automatic juice machine — test run" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+          <figcaption>Test run of the working prototype.</figcaption>
+        </figure>
+      </div>
+
       <p class="project-tools"><strong>Skills:</strong> SolidWorks, mechanical design, manufacturing, casting, prototyping</p>
     </div>
     <!-- PROJECT END -->
