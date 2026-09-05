@@ -207,6 +207,39 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
 <section>
   <div class="wrap">
+    <h2>Applications</h2>
+    <p class="lede">This work feeds directly into technologies where thermal design decides performance.</p>
+    <div class="research-topics">
+      <div class="topic">
+        <h3>Electronics and data-center cooling</h3>
+        <p>As chips and interconnects shrink toward the nanoscale, classical heat transfer models stop working. Predicting heat flow correctly at these scales is what keeps devices within thermal limits.</p>
+      </div>
+      <div class="topic">
+        <h3>Heat-assisted magnetic recording</h3>
+        <p>HAMR drive heads fly sub-nanometer above the disk. Phonon and radiative transport across that gap sets the thermal budget of the whole read-write process.</p>
+      </div>
+      <div class="topic">
+        <h3>Near-field energy conversion</h3>
+        <p>Thermophotovoltaic and thermal-management devices exploit radiation that exceeds the blackbody limit at nanoscale gaps. Their design needs material properties at real operating temperatures, not 0&nbsp;K.</p>
+      </div>
+      <div class="topic">
+        <h3>Thermal sensing and scanning probes</h3>
+        <p>Scanning thermal microscopy reads temperature through a tip-sample gap. Interpreting the signal requires knowing how heat actually crosses that gap.</p>
+      </div>
+      <div class="topic">
+        <h3>Solar thermal and enclosure design</h3>
+        <p>Solar collectors, solar ponds, and electronic enclosures are natural convection problems with conducting walls. My CFD work maps which geometry, material, and heating choices move the most heat.</p>
+      </div>
+      <div class="topic">
+        <h3>Material data for device modeling</h3>
+        <p>Every thermal radiation model needs a dielectric function as input. My framework supplies it at any temperature, for metals, semiconductors, and 2D materials, from first principles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2>Ph.D. research</h2>
 
     <!-- ===== PAPER START ===== -->
@@ -368,6 +401,45 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <p class="paper-tools"><strong>Tools:</strong> Galerkin finite element method, COMSOL Multiphysics, conjugate natural convection</p>
     </div>
     <!-- ===== PAPER END ===== -->
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">Same cavity, same fluid, three ways to heat it. Only one wins at high Rayleigh number.</div>
+      <div class="paper-ref">Entropy Analysis due to Conjugate Natural Convection in Water-Al&#8322;O&#8323; Nanofluid Filled Prismatic Cavity · AIP Conference Proceedings 2324, 050022 (2021) · <a href="https://doi.org/10.1063/5.0037522">DOI</a></div>
+
+      <h4>Problem</h4>
+      <p>Prismatic enclosures appear in solar collectors, greenhouses, and electronics cooling. Filling them with nanofluid boosts heat transfer, but nobody had studied a nanofluid-filled prismatic cavity with a thick conducting wall, or asked which heating profile on that wall performs best.</p>
+
+      <h4>What I did</h4>
+      <p>Solved conjugate natural convection of water-Al&#8322;O&#8323; nanofluid in a prismatic cavity with a thick pinewood bottom wall using the Galerkin finite element method. Compared three heating profiles, isothermal, linear, and sinusoidal, across Ra from 10&#179; to 10&#8311;, tracking heat transfer and entropy generation together. Validated against published square-cavity results first.</p>
+
+      <h4>Result</h4>
+      <p>Sinusoidal heating delivers the highest heat transfer once convection takes over (Ra &#8805; 2&#215;10&#8309;), while linear heating always loses. Entropy generation stays flat up to Ra = 3&#215;10&#8308; and peaks for isothermal heating. So the best-mixing condition and the most-wasteful condition are not the same one, and that matters for design.</p>
+
+      <div class="paper-figures">
+        <figure>
+          <img src="figures/cfd-prismatic-schematic.png" alt="Prismatic cavity filled with water-Al2O3 nanofluid over a thick pinewood bottom wall, with three heating profiles applied at the wall">
+          <figcaption>The setup: prismatic cavity, thick conducting bottom wall, nanofluid inside, three heating profiles.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-prismatic-equations.png" alt="Non-dimensional continuity, momentum, and energy governing equations of the conjugate natural convection model">
+          <figcaption>The physics solved: continuity, momentum, and energy equations with effective nanofluid properties.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-prismatic-isotherms.png" alt="Isotherm plots for isothermal, linear, and sinusoidal heating at Rayleigh numbers of 10^3 and 10^7">
+          <figcaption>Isotherms for the three heating profiles. Higher Ra thins the thermal boundary layer.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-prismatic-performance.png" alt="Average Nusselt number and total entropy generation versus Rayleigh number for the three heating conditions">
+          <figcaption>The verdict: Nusselt number and entropy generation vs. Ra for each heating condition.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> Galerkin finite element method, nanofluid modeling, conjugate natural convection, entropy generation analysis</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+    <p class="paper-tools" style="max-width: 52rem;">These are selected papers. The complete list of journal and conference publications, with citation counts, is on <a href="https://scholar.google.com/citations?user=m-4lmIEAAAAJ" style="color: var(--accent); text-decoration: none; font-weight: 500;">Google Scholar</a>.</p>
 
   </div>
 </section>
