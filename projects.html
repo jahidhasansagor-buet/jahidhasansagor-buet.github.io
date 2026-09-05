@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Md Jahid Hasan Sagor</title>
+<meta name="description" content="Engineering projects: HVAC automation, control systems, mechanical design, and computational tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Md Jahid Hasan Sagor</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-head wrap">
+  <h1>Projects</h1>
+  <p>Hands-on engineering work: what the problem was, how I solved it, and what it produced.</p>
+</div>
+
+<section>
+  <div class="wrap">
+
+    <!-- ============================================================
+         PROJECT BLOCK — to add a project, copy from START to END,
+         paste it below, and edit the text. To delete a project,
+         delete everything from START to END.
+         ============================================================ -->
+    <!-- PROJECT START -->
+    <div class="project">
+      <h3>Temperature-Based Chilled Water Automation and Control System</h3>
+      <div class="project-context">Eskayef Pharmaceuticals Ltd. · 2020</div>
+      <p><strong>The problem:</strong> chilled water supply to a process line was controlled by manual valve operation, causing temperature fluctuations and constant operator attention.</p>
+      <p><strong>What I did:</strong> designed and built an automated control system using an Autonics TC4W temperature controller actuating a relay and solenoid valve — automatically opening or closing the chilled water line when process temperature crossed the setpoint. Separately, for a stepper-motor-driven peristaltic filling pump whose driver lacked a suitable control signal, I designed an LM555-based astable multivibrator circuit (resistors, potentiometer, capacitors, transistor) generating a stable 3&nbsp;kHz pulse to drive the motor.</p>
+      <p><strong>Result:</strong> replaced manual valve operation, reduced temperature fluctuations, and got the filling pump running with a purpose-built control circuit.</p>
+      <p class="project-tools"><strong>Skills:</strong> PID control, HVAC, process automation, instrumentation, control systems, circuit design</p>
+    </div>
+    <!-- PROJECT END -->
+
+    <!-- PROJECT START -->
+    <div class="project">
+      <h3>AutoCAD Engineering Drawing Portfolio</h3>
+      <div class="project-context">University of Maine · 2026</div>
+      <p>Three 2D drawings completed in Autodesk AutoCAD 2026: an internal combustion engine crankshaft with sectional views, a screw jack detail and assembly drawing with material specifications, and a residential floor plan. The portfolio demonstrates dimensioning, sectional views, hatching, layer use, assembly detailing, and title-block preparation.</p>
+      <p class="project-tools"><strong>Skills:</strong> AutoCAD, engineering drawings, mechanical design, technical drawing, 2D drafting</p>
+      <div class="project-links"><a href="https://github.com/jahidhasansagor-buet">Portfolio PDF and original .dwg files on GitHub</a></div>
+    </div>
+    <!-- PROJECT END -->
+
+    <!-- PROJECT START -->
+    <div class="project">
+      <h3>Digital Psychrometric Chart in MATLAB</h3>
+      <div class="project-context">BUET</div>
+      <p><strong>The problem:</strong> reading air properties off a paper psychrometric chart is slow and error-prone for repeated HVAC calculations.</p>
+      <p><strong>What I did:</strong> developed a MATLAB program that computes all psychrometric air properties from a given dry-bulb and wet-bulb temperature, and automatically determines what environmental change is needed to bring conditions into the comfort or required zone.</p>
+      <p class="project-tools"><strong>Skills:</strong> MATLAB, psychrometrics, HVAC analysis, thermodynamics</p>
+    </div>
+    <!-- PROJECT END -->
+
+    <!-- PROJECT START -->
+    <div class="project">
+      <h3>Automatic Juice Making Machine</h3>
+      <div class="project-context">BUET</div>
+      <p>Designed and fabricated a machine for effortless lime juice extraction using a rotating squeezing mechanism. Rotating parts were designed in SolidWorks and manufactured by molding and aluminium casting in the BUET foundry lab, followed by functional testing of the working prototype.</p>
+      <p class="project-tools"><strong>Skills:</strong> SolidWorks, mechanical design, manufacturing, casting, prototyping</p>
+    </div>
+    <!-- PROJECT END -->
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Md Jahid Hasan Sagor · Last updated September 2026</div>
+</footer>
+
+</body>
+</html>
