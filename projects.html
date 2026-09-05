@@ -126,6 +126,9 @@ p + p { margin-top: 0.9rem; }
 .project-figures img { object-fit: contain; padding: 0.5rem; box-sizing: border-box; }
 .project-figures figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
 .project-figures.sheets img { height: auto; padding: 0; }
+.project-figures.grid4 { grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+.project-figures.grid4 img { height: 130px; object-fit: cover; padding: 0; }
+.project-figures.grid4 figcaption { text-align: center; }
 
 /* ---------- Research paper entries ---------- */
 .paper { margin-bottom: 3.2rem; max-width: 52rem; }
@@ -186,6 +189,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
   .page-head h1 { font-size: 1.8rem; }
   .project { padding: 1.2rem 1.2rem; }
   .project-figures { grid-template-columns: 1fr; }
+  .project-figures.grid4 { grid-template-columns: 1fr 1fr; }
 }
 
 </style>
@@ -225,6 +229,42 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <p><strong>The problem:</strong> chilled water supply to a process line was controlled by manual valve operation, causing temperature fluctuations and constant operator attention.</p>
       <p><strong>What I did:</strong> designed and built an automated control system using an Autonics TC4W temperature controller actuating a relay and solenoid valve — automatically opening or closing the chilled water line when process temperature crossed the setpoint. Separately, for a stepper-motor-driven peristaltic filling pump whose driver lacked a suitable control signal, I designed an LM555-based astable multivibrator circuit (resistors, potentiometer, capacitors, transistor) generating a stable 3&nbsp;kHz pulse to drive the motor.</p>
       <p><strong>Result:</strong> replaced manual valve operation, reduced temperature fluctuations, and got the filling pump running with a purpose-built control circuit.</p>
+
+      <div class="project-figures grid4">
+        <figure>
+          <img src="figures/automation-pid-controller.png" alt="Autonics TC4W temperature controller displaying process temperature">
+          <figcaption>TC4W PID controller</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/automation-relay.png" alt="Electromechanical relay used to switch the solenoid valve">
+          <figcaption>Relay</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/automation-solenoid-valve.png" alt="Brass solenoid valve for the chilled water line">
+          <figcaption>Solenoid valve</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/automation-breaker.png" alt="Circuit breaker protecting the control system">
+          <figcaption>Breaker</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/automation-stepper-driver.png" alt="Stepper motor driver and power supply unit">
+          <figcaption>Stepper motor driver</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/automation-control-circuit.png" alt="Wired control circuit with driver terminals and DIP switch settings">
+          <figcaption>Control circuit wiring</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/automation-stepper-motor.png" alt="Stepper motor driving the peristaltic filling pump">
+          <figcaption>Stepper motor</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/automation-multivibrator.png" alt="LM555 astable multivibrator circuit built on a perfboard">
+          <figcaption>LM555 astable multivibrator</figcaption>
+        </figure>
+      </div>
+
       <p class="project-tools"><strong>Skills:</strong> PID control, HVAC, process automation, instrumentation, control systems, circuit design</p>
     </div>
     <!-- PROJECT END -->
@@ -266,6 +306,26 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <div class="project-context">BUET</div>
       <p><strong>The problem:</strong> reading air properties off a paper psychrometric chart is slow and error-prone for repeated HVAC calculations.</p>
       <p><strong>What I did:</strong> developed a MATLAB program that computes all psychrometric air properties from a given dry-bulb and wet-bulb temperature, and automatically determines what environmental change is needed to bring conditions into the comfort or required zone.</p>
+
+      <div class="project-figures">
+        <figure>
+          <img src="figures/psychro-gui.png" alt="MATLAB GUI showing computed relative humidity, humidity ratio, dew point, specific volume, and enthalpy from dry-bulb and wet-bulb inputs">
+          <figcaption>The result: enter dry-bulb and wet-bulb temperature, get all five air properties at once.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/psychro-main-code.png" alt="Main MATLAB code computing humidity ratio, relative humidity, and dew point from the input temperatures">
+          <figcaption>Core calculation: property equations plus a lookup on tabulated saturation data.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/psychro-interpolation.png" alt="MATLAB function performing linear interpolation of saturation pressure between table entries">
+          <figcaption>Interpolation function for saturation pressure between table entries.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/psychro-interp-data.png" alt="Spline interpolation of saturation data digitized from thermodynamic property tables">
+          <figcaption>Property tables from the books, densified by spline interpolation.</figcaption>
+        </figure>
+      </div>
+
       <p class="project-tools"><strong>Skills:</strong> MATLAB, psychrometrics, HVAC analysis, thermodynamics</p>
     </div>
     <!-- PROJECT END -->
