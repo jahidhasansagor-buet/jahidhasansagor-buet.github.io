@@ -271,20 +271,20 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
     <!-- PROJECT START -->
     <div class="project">
-      <h3>Cooling Load Calculation of a Single-Zone Conditioned Space (CLTD/CLF Method)</h3>
-      <div class="project-context">Independent work · September 2026</div>
-      <p><strong>The problem:</strong> before an air-conditioning unit can be selected, the peak cooling load of the space has to be calculated. Floor-area rules of thumb skip this step and routinely oversize the equipment.</p>
-      <p><strong>What I did:</strong> carried out a complete CLTD/CLF cooling load calculation for a 10&nbsp;m &times; 10&nbsp;m &times; 3&nbsp;m conditioned space at the 5&nbsp;PM design hour. Built U-values layer by layer from ASHRAE resistance tables for the Type&nbsp;4 roof, Type&nbsp;G metal curtain walls, and brick partitions; applied latitude, month, and outdoor-temperature corrections to the tabulated CLTDs for the sunlit surfaces; calculated solar gain through the west glazing from the shading coefficient, maximum solar heat gain factor, and cooling load factor; and added sensible and latent outdoor-air loads at 1&nbsp;ACH plus internal gains from lighting (with ballast allowance), occupants, and equipment.</p>
-      <p><strong>Result:</strong> a total load of 13.25&nbsp;kW (3.77&nbsp;TR), with lighting and the west window as the two largest contributors. With a 10% design allowance, a nominal 4.5&nbsp;TR unit was selected. The floor-area rule of thumb gave 5.4 to 7.2&nbsp;TR for the same room — up to 90% oversized — which is exactly why the detailed calculation is worth doing.</p>
+      <h3>Cooling Load Calculation of a Single-Zone Conditioned Space Using the CLTD/CLF Method</h3>
+      <div class="project-context">Independent Project · September 2026</div>
+      <p><strong>Objective:</strong> determine the peak cooling load of a single-zone conditioned space and estimate the required air-conditioning capacity using the CLTD/CLF method.</p>
+      <p><strong>Method:</strong> performed a complete cooling-load calculation for a 10&nbsp;m &times; 10&nbsp;m &times; 3&nbsp;m conditioned space at the 5&nbsp;PM design hour. Calculated U-values for the roof, exterior walls, and brick walls from ASHRAE thermal-resistance data. Applied latitude, month, and outdoor-temperature corrections to the tabulated CLTD values for sun-exposed surfaces. Calculated solar heat gain through the west-facing glazing using the shading coefficient, maximum solar heat gain factor, and cooling load factor. Outdoor-air sensible and latent loads were included at 1&nbsp;ACH, along with internal heat gains from lighting, occupants, and equipment.</p>
+      <p><strong>Results:</strong> the calculated peak cooling load was 13.25&nbsp;kW (3.77&nbsp;TR). Lighting and west-facing glazing were among the major contributors to the total load. With a 10% design allowance, the estimated cooling requirement was approximately 4.1&nbsp;TR, and a nominal 4.5&nbsp;TR unit was selected for the project. A floor-area rule-of-thumb estimate gave 5.4&ndash;7.2&nbsp;TR, showing the difference between a simplified estimate and a component-based cooling-load calculation.</p>
 
       <div class="project-figures">
         <figure>
           <img src="figures/hvac-load-plan.png" alt="Plan of the conditioned space showing sunlit curtain walls, brick partitions, windows, and surrounding conditions">
-          <figcaption>The space: sunlit curtain walls on the west and south, brick partitions on the north and east, 6&nbsp;m&sup2; of glass on each of the west and east sides.</figcaption>
+          <figcaption>Conditioned-space layout and envelope construction used for the cooling-load calculation.</figcaption>
         </figure>
         <figure>
           <img src="figures/hvac-load-summary.png" alt="Load summary table showing sensible and latent components totalling 13.25 kW at the design hour">
-          <figcaption>The verdict: component-by-component load summary at the design hour.</figcaption>
+          <figcaption>Cooling-load breakdown at the 5&nbsp;PM design condition.</figcaption>
         </figure>
       </div>
 
