@@ -221,11 +221,11 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
   <h1>Projects</h1>
   <p>Hands-on engineering work: what the problem was, how I solved it, and what it produced.</p>
   <div class="tag-nav" aria-label="Jump to a project">
-    <a href="#automation">Automation &amp; Controls</a>
-    <a href="#hvac-load">HVAC · Cooling Load</a>
     <a href="#autocad">AutoCAD</a>
-    <a href="#matlab">MATLAB</a>
     <a href="#solidworks">SolidWorks</a>
+    <a href="#hvac-load">HVAC · Cooling Load</a>
+    <a href="#automation">Automation &amp; Controls</a>
+    <a href="#matlab">MATLAB</a>
   </div>
 </div>
 
@@ -237,6 +237,90 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
          paste it below, and edit the text. To delete a project,
          delete everything from START to END.
          ============================================================ -->
+    <!-- PROJECT START -->
+    <div class="project" id="autocad">
+      <h3>Engineering Drawing Portfolio (AutoCAD 2026)</h3>
+      <div class="project-context">Independent work · July–August 2026</div>
+      <p>Three 2D drawings completed to keep my drafting skills current alongside my Ph.D. research:</p>
+      <ul>
+        <li><strong>IC engine crankshaft</strong> — four-throw crankshaft detail drawing with two cross sections (A-A, B-B) through the webs and pins, flywheel bolt circle, and diametral, radial, and angular dimensioning.</li>
+        <li><strong>Screw jack detail and assembly</strong> — seven component details with material specifications (cast iron, mild steel, gun metal, cast steel) and a half-sectional front view of the assembled jack.</li>
+        <li><strong>Residential floor plan</strong> — two-bedroom single-storey plan with door swings, wall hatching, furniture and fixture blocks, and feet-and-inches dimension strings on all four sides.</li>
+      </ul>
+
+      <div class="project-figures sheets">
+        <figure>
+          <img src="figures/autocad-crankshaft.png" alt="Detail drawing of a four-throw IC engine crankshaft with two cross sections and full dimensioning">
+          <figcaption>Crankshaft detail: side view with A-A and B-B cross sections and the flywheel bolt circle.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/autocad-screw-jack.png" alt="Screw jack drawing with seven dimensioned component details and a half-sectional assembly view">
+          <figcaption>Screw jack: seven component details with materials, plus the half-sectional assembly.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/autocad-floor-plan.png" alt="Two-bedroom residential floor plan with wall hatching, door swings, furniture blocks, and dimension strings">
+          <figcaption>Floor plan: two-bedroom layout with hatching, blocks, and dimension strings on all sides.</figcaption>
+        </figure>
+      </div>
+
+      <p class="project-tools"><strong>Skills:</strong> orthographic and sectional views, assembly drawings, dimensioning, hatching, layer management, blocks, title-block preparation</p>
+      <div class="project-links"><a href="https://github.com/jahidhasansagor-buet/AutoCAD-Engineering-Drawings">Original .dwg and .pdf files on GitHub</a> &nbsp;·&nbsp; <a href="Engineering_Drawing_Portfolio.pdf">Portfolio PDF</a></div>
+    </div>
+    <!-- PROJECT END -->
+
+    <!-- PROJECT START -->
+    <div class="project" id="solidworks">
+      <h3>Automatic Juice Making Machine</h3>
+      <div class="project-context">BUET</div>
+      <p>Designed and fabricated a machine for effortless lime juice extraction using a rotating squeezing mechanism. Rotating parts were designed in SolidWorks and manufactured by molding and aluminium casting in the BUET foundry lab, followed by functional testing of the working prototype.</p>
+
+      <div class="project-figures">
+        <figure>
+          <img src="figures/juice-rotating-parts.png" alt="SolidWorks model of the rotating squeezing part of the juice machine">
+          <figcaption>The rotating squeezing part, designed in SolidWorks before casting.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/juice-wooden-pattern.jpg" alt="Split wooden pattern of the rotating part, hand-made for the sand mold">
+          <figcaption>Split wooden pattern of the rotating part, made for the sand mold before casting.</figcaption>
+        </figure>
+        <figure>
+          <iframe src="https://drive.google.com/file/d/1RB_dKaMb8zN7mepKtaa1tOMWfE3xG2wM/preview" title="Automatic juice machine — fabricated prototype" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+          <figcaption>The fabricated machine: cast aluminium parts assembled on the frame.</figcaption>
+        </figure>
+        <figure>
+          <iframe src="https://drive.google.com/file/d/1wG6ZFQpPD4jLIzJGYAm4lbnNQ1_BDub2/preview" title="Automatic juice machine — test run" allow="autoplay" allowfullscreen loading="lazy"></iframe>
+          <figcaption>Test run of the working prototype.</figcaption>
+        </figure>
+      </div>
+
+      <p class="project-tools"><strong>Skills:</strong> SolidWorks, mechanical design, manufacturing, casting, prototyping</p>
+    </div>
+    <!-- PROJECT END -->
+
+    <!-- PROJECT START -->
+    <div class="project" id="hvac-load">
+      <h3>Cooling Load Calculation of a Single-Zone Conditioned Space Using the CLTD/CLF Method</h3>
+      <div class="project-context">Independent Project · September 2026</div>
+      <p><strong>The problem:</strong> before the air-conditioning capacity for a single-zone conditioned space can be estimated, its peak cooling load has to be calculated.</p>
+      <p><strong>What I did:</strong> performed a complete cooling-load calculation for a 10&nbsp;m &times; 10&nbsp;m &times; 3&nbsp;m conditioned space at the 5&nbsp;PM design hour using the CLTD/CLF method. Calculated U-values for the roof, exterior walls, and brick walls from ASHRAE thermal-resistance data. Applied latitude, month, and outdoor-temperature corrections to the tabulated CLTD values for sun-exposed surfaces. Calculated solar heat gain through the west-facing glazing using the shading coefficient, maximum solar heat gain factor, and cooling load factor. Outdoor-air sensible and latent loads were included at 1&nbsp;ACH, along with internal heat gains from lighting, occupants, and equipment.</p>
+      <p><strong>Result:</strong> the calculated peak cooling load was 13.25&nbsp;kW (3.77&nbsp;TR). Lighting and west-facing glazing were among the major contributors to the total load. With a 10% design allowance, the estimated cooling requirement was approximately 4.1&nbsp;TR, and a nominal 4.5&nbsp;TR unit was selected for the project. A floor-area rule-of-thumb estimate gave 5.4&ndash;7.2&nbsp;TR, showing the difference between a simplified estimate and a component-based cooling-load calculation.</p>
+
+      <div class="project-figures">
+        <figure>
+          <img src="figures/hvac-load-plan.png" alt="Plan of the conditioned space showing sunlit curtain walls, brick partitions, windows, and surrounding conditions">
+          <figcaption>Conditioned-space layout and envelope construction used for the cooling-load calculation.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/hvac-load-summary.png" alt="Load summary table showing sensible and latent components totalling 13.25 kW at the design hour">
+          <figcaption>Cooling-load breakdown at the 5&nbsp;PM design condition.</figcaption>
+        </figure>
+      </div>
+
+      <p class="project-tools"><strong>Skills:</strong> cooling load calculation, CLTD/CLF method, ASHRAE tables, U-value buildup, psychrometrics, equipment sizing</p>
+      <div class="project-links"><a href="HVAC_Cooling_Load_Project.pdf">Full report (PDF)</a></div>
+    </div>
+    <!-- PROJECT END -->
+
     <!-- PROJECT START -->
     <div class="project" id="automation">
       <h3>Temperature-Based Chilled Water Automation and Control System</h3>
@@ -285,61 +369,6 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <!-- PROJECT END -->
 
     <!-- PROJECT START -->
-    <div class="project" id="hvac-load">
-      <h3>Cooling Load Calculation of a Single-Zone Conditioned Space Using the CLTD/CLF Method</h3>
-      <div class="project-context">Independent Project · September 2026</div>
-      <p><strong>The problem:</strong> before the air-conditioning capacity for a single-zone conditioned space can be estimated, its peak cooling load has to be calculated.</p>
-      <p><strong>What I did:</strong> performed a complete cooling-load calculation for a 10&nbsp;m &times; 10&nbsp;m &times; 3&nbsp;m conditioned space at the 5&nbsp;PM design hour using the CLTD/CLF method. Calculated U-values for the roof, exterior walls, and brick walls from ASHRAE thermal-resistance data. Applied latitude, month, and outdoor-temperature corrections to the tabulated CLTD values for sun-exposed surfaces. Calculated solar heat gain through the west-facing glazing using the shading coefficient, maximum solar heat gain factor, and cooling load factor. Outdoor-air sensible and latent loads were included at 1&nbsp;ACH, along with internal heat gains from lighting, occupants, and equipment.</p>
-      <p><strong>Result:</strong> the calculated peak cooling load was 13.25&nbsp;kW (3.77&nbsp;TR). Lighting and west-facing glazing were among the major contributors to the total load. With a 10% design allowance, the estimated cooling requirement was approximately 4.1&nbsp;TR, and a nominal 4.5&nbsp;TR unit was selected for the project. A floor-area rule-of-thumb estimate gave 5.4&ndash;7.2&nbsp;TR, showing the difference between a simplified estimate and a component-based cooling-load calculation.</p>
-
-      <div class="project-figures">
-        <figure>
-          <img src="figures/hvac-load-plan.png" alt="Plan of the conditioned space showing sunlit curtain walls, brick partitions, windows, and surrounding conditions">
-          <figcaption>Conditioned-space layout and envelope construction used for the cooling-load calculation.</figcaption>
-        </figure>
-        <figure>
-          <img src="figures/hvac-load-summary.png" alt="Load summary table showing sensible and latent components totalling 13.25 kW at the design hour">
-          <figcaption>Cooling-load breakdown at the 5&nbsp;PM design condition.</figcaption>
-        </figure>
-      </div>
-
-      <p class="project-tools"><strong>Skills:</strong> cooling load calculation, CLTD/CLF method, ASHRAE tables, U-value buildup, psychrometrics, equipment sizing</p>
-      <div class="project-links"><a href="HVAC_Cooling_Load_Project.pdf">Full report (PDF)</a></div>
-    </div>
-    <!-- PROJECT END -->
-
-    <!-- PROJECT START -->
-    <div class="project" id="autocad">
-      <h3>Engineering Drawing Portfolio (AutoCAD 2026)</h3>
-      <div class="project-context">Independent work · July–August 2026</div>
-      <p>Three 2D drawings completed to keep my drafting skills current alongside my Ph.D. research:</p>
-      <ul>
-        <li><strong>IC engine crankshaft</strong> — four-throw crankshaft detail drawing with two cross sections (A-A, B-B) through the webs and pins, flywheel bolt circle, and diametral, radial, and angular dimensioning.</li>
-        <li><strong>Screw jack detail and assembly</strong> — seven component details with material specifications (cast iron, mild steel, gun metal, cast steel) and a half-sectional front view of the assembled jack.</li>
-        <li><strong>Residential floor plan</strong> — two-bedroom single-storey plan with door swings, wall hatching, furniture and fixture blocks, and feet-and-inches dimension strings on all four sides.</li>
-      </ul>
-
-      <div class="project-figures sheets">
-        <figure>
-          <img src="figures/autocad-crankshaft.png" alt="Detail drawing of a four-throw IC engine crankshaft with two cross sections and full dimensioning">
-          <figcaption>Crankshaft detail: side view with A-A and B-B cross sections and the flywheel bolt circle.</figcaption>
-        </figure>
-        <figure>
-          <img src="figures/autocad-screw-jack.png" alt="Screw jack drawing with seven dimensioned component details and a half-sectional assembly view">
-          <figcaption>Screw jack: seven component details with materials, plus the half-sectional assembly.</figcaption>
-        </figure>
-        <figure>
-          <img src="figures/autocad-floor-plan.png" alt="Two-bedroom residential floor plan with wall hatching, door swings, furniture blocks, and dimension strings">
-          <figcaption>Floor plan: two-bedroom layout with hatching, blocks, and dimension strings on all sides.</figcaption>
-        </figure>
-      </div>
-
-      <p class="project-tools"><strong>Skills:</strong> orthographic and sectional views, assembly drawings, dimensioning, hatching, layer management, blocks, title-block preparation</p>
-      <div class="project-links"><a href="https://github.com/jahidhasansagor-buet/AutoCAD-Engineering-Drawings">Original .dwg and .pdf files on GitHub</a> &nbsp;·&nbsp; <a href="Engineering_Drawing_Portfolio.pdf">Portfolio PDF</a></div>
-    </div>
-    <!-- PROJECT END -->
-
-    <!-- PROJECT START -->
     <div class="project" id="matlab">
       <h3>Digital Psychrometric Chart in MATLAB</h3>
       <div class="project-context">BUET</div>
@@ -367,31 +396,6 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
       <p class="project-tools"><strong>Skills:</strong> MATLAB, psychrometrics, HVAC analysis, thermodynamics</p>
       <div class="project-links"><a href="Digital_Psychrometric_Chart_Report.pdf">Full report (PDF)</a></div>
-    </div>
-    <!-- PROJECT END -->
-
-    <!-- PROJECT START -->
-    <div class="project" id="solidworks">
-      <h3>Automatic Juice Making Machine</h3>
-      <div class="project-context">BUET</div>
-      <p>Designed and fabricated a machine for effortless lime juice extraction using a rotating squeezing mechanism. Rotating parts were designed in SolidWorks and manufactured by molding and aluminium casting in the BUET foundry lab, followed by functional testing of the working prototype.</p>
-
-      <div class="project-figures">
-        <figure>
-          <img src="figures/juice-rotating-parts.png" alt="SolidWorks model of the rotating squeezing part of the juice machine">
-          <figcaption>The rotating squeezing part, designed in SolidWorks before casting.</figcaption>
-        </figure>
-        <figure>
-          <iframe src="https://drive.google.com/file/d/1RB_dKaMb8zN7mepKtaa1tOMWfE3xG2wM/preview" title="Automatic juice machine — fabricated prototype" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          <figcaption>The fabricated machine: cast aluminium parts assembled on the frame.</figcaption>
-        </figure>
-        <figure>
-          <iframe src="https://drive.google.com/file/d/1wG6ZFQpPD4jLIzJGYAm4lbnNQ1_BDub2/preview" title="Automatic juice machine — test run" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          <figcaption>Test run of the working prototype.</figcaption>
-        </figure>
-      </div>
-
-      <p class="project-tools"><strong>Skills:</strong> SolidWorks, mechanical design, manufacturing, casting, prototyping</p>
     </div>
     <!-- PROJECT END -->
 
