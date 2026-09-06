@@ -142,6 +142,15 @@ p + p { margin-top: 0.9rem; }
 }
 
 /* ---------- Experience ---------- */
+.refs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.4rem; max-width: 52rem; }
+.ref-quote { font-style: italic; color: var(--muted); font-size: 0.92rem; line-height: 1.55; border-left: 2px solid var(--accent); padding-left: 0.9rem; margin-bottom: 0.7rem; }
+.ref-name { font-weight: 600; font-size: 0.96rem; }
+.ref-role { color: var(--muted); font-size: 0.88rem; }
+.ref-mail { font-size: 0.88rem; margin-top: 0.15rem; }
+.ref-mail a { color: var(--accent); text-decoration: none; }
+.ref-mail a:hover, .ref-mail a:focus-visible { text-decoration: underline; }
+.refs-note { margin-top: 1.6rem; color: var(--muted); font-size: 0.92rem; max-width: 52rem; }
+@media (max-width: 720px) { .refs { grid-template-columns: 1fr; } }
 .job { display: grid; grid-template-columns: 155px 1fr; gap: 1.5rem; margin-bottom: 1.8rem; max-width: 50rem; }
 .job-when { color: var(--muted); font-size: 0.9rem; padding-top: 0.15rem; }
 .job-org { color: var(--muted); font-size: 0.94rem; margin-bottom: 0.35rem; }
@@ -255,6 +264,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <div class="edu">
       <div class="edu-degree">Ph.D. in Mechanical Engineering</div>
       <div class="edu-meta">University of Maine — expected Apr 2027 · CGPA 3.86</div>
+      <div class="edu-meta">Dissertation: Radiation Heat Transfer in the Quantum Regime</div>
     </div>
     <div class="edu">
       <div class="edu-degree">M.S. in Mechanical Engineering</div>
@@ -263,6 +273,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <div class="edu">
       <div class="edu-degree">B.Sc. in Mechanical Engineering</div>
       <div class="edu-meta">Bangladesh University of Engineering and Technology (BUET) — Dec 2018</div>
+      <div class="edu-meta">Thesis: <a href="https://www.researchgate.net/publication/349670316_Thesis_Numerical_Investigation_for_Entropy_Generation_of_Conjugate_Natural_Convection_and_Heat_Transfer_Inside_a_Prismatic_Enclosure_with_Different_Thick_Wall_Materials" style="color: var(--accent); text-decoration: none;">Numerical Investigation for Entropy Generation of Conjugate Natural Convection and Heat Transfer Inside a Prismatic Enclosure with Different Thick Wall Materials</a> — 3,400+ reads on ResearchGate</div>
     </div>
   </div>
 </section>
@@ -276,7 +287,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <div class="job-when">Sep 2021 — present</div>
       <div>
         <h3>Research Assistant (NSF-funded project)</h3>
-        <div class="job-org">University of Maine — Orono, ME</div>
+        <div class="job-org">University of Maine — Orono, ME · Advisor: Dr. Sheila Edalatpour</div>
         <ul>
           <li>Develop first-principles and analytical thermal models predicting heat transfer in high-temperature energy systems, with material properties computed as functions of temperature.</li>
           <li>Two first-author papers in Physical Review B; results validated against published experimental measurements.</li>
@@ -291,7 +302,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <div class="job-when">Sep 2023 — May 2025</div>
       <div>
         <h3>Teaching Assistant</h3>
-        <div class="job-org">University of Maine — Orono, ME</div>
+        <div class="job-org">University of Maine — Orono, ME · Supervisors: Frank Dudish and Christopher Mordaunt</div>
         <ul>
           <li>Taught undergraduate courses in Thermodynamics I &amp; II and Technical Physics I &amp; II.</li>
           <li>Graded homework assignments and exams and provided feedback to students.</li>
@@ -305,7 +316,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <div class="job-when">Oct 2019 — Jun 2021</div>
       <div>
         <h3>Executive Engineer, HVAC &amp; Boiler Operations</h3>
-        <div class="job-org">Eskayef Pharmaceuticals Ltd. — Dhaka, Bangladesh</div>
+        <div class="job-org">Eskayef Pharmaceuticals Ltd. — Dhaka, Bangladesh · Supervisor: A.S.M Sayem</div>
         <ul>
           <li>Commissioned a 600-ton York water-cooled chiller: specifications, procurement support, installation supervision, and performance testing before handover.</li>
           <li>Operated 600-ton Trane water-cooled and 150/110-ton air-cooled chillers, AHUs, and BMS serving GMP production areas.</li>
@@ -319,13 +330,46 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <div class="job-when">Jan — Aug 2019</div>
       <div>
         <h3>Research Assistant, CFD &amp; Heat Transfer Research Group</h3>
-        <div class="job-org">Bangladesh University of Engineering and Technology (BUET)</div>
+        <div class="job-org">Bangladesh University of Engineering and Technology (BUET) · Supervisor: Dr. Sumon Saha</div>
         <ul>
           <li>CFD simulations of convective, conjugate, and natural/mixed convection heat transfer using the finite element method.</li>
           <li>Work led to two Q1 journal papers and four conference papers; mentored undergraduate researchers.</li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="references">
+  <div class="wrap">
+    <h2>References</h2>
+    <div class="refs">
+      <div class="ref">
+        <div class="ref-quote">&ldquo;In our project evaluating phonon thermal transport mechanisms across two in-plane nanoribbons, Mr. Sagor was the lead contributor. He independently carried out all key components, including developing the simulation framework, performing all numerical calculations, and processing results.&rdquo;</div>
+        <div class="ref-name">Dr. Sheila Edalatpour</div>
+        <div class="ref-role">Ph.D. Advisor &middot; Libra Associate Professor of Mechanical Engineering, University of Maine</div>
+        <div class="ref-mail"><a href="mailto:sheila.edalatpour@maine.edu">sheila.edalatpour@maine.edu</a></div>
+      </div>
+      <div class="ref">
+        <div class="ref-quote">&ldquo;His strong work ethic, attention to detail, and ability to master advanced thermal-fluid dynamics made him an invaluable member of my research team.&rdquo;</div>
+        <div class="ref-name">Dr. Sumon Saha</div>
+        <div class="ref-role">Undergraduate Research Supervisor &middot; Professor of Mechanical Engineering, BUET</div>
+        <div class="ref-mail"><a href="mailto:sumonsaha@me.buet.ac.bd">sumonsaha@me.buet.ac.bd</a></div>
+      </div>
+      <div class="ref">
+        <div class="ref-quote">&ldquo;His ability to identify practical engineering solutions and improve system reliability made a positive impact on the plant&rsquo;s performance and compliance.&rdquo;</div>
+        <div class="ref-name">A.S.M Sayem</div>
+        <div class="ref-role">Deputy Manager, Engineering &middot; Eskayef Pharmaceuticals Ltd.</div>
+        <div class="ref-mail"><a href="mailto:shahadat.sayem@skf.transcombd.com">shahadat.sayem@skf.transcombd.com</a></div>
+      </div>
+      <div class="ref">
+        <div class="ref-quote">&ldquo;His knowledge and skill on HVAC, Chiller, Boiler &amp; BMS will add value to any industry.&rdquo;</div>
+        <div class="ref-name">Mohaimenul Islam Nahid</div>
+        <div class="ref-role">Sr. Assistant Engineering Manager &middot; Colleague at Eskayef Pharmaceuticals Ltd.</div>
+        <div class="ref-mail"><a href="https://www.linkedin.com/in/nahidbd/">Recommendation on LinkedIn</a></div>
+      </div>
+    </div>
+    <p class="refs-note">Teaching references: Frank Dudish (<a href="mailto:frank.dudish@maine.edu" style="color:var(--accent);text-decoration:none;">frank.dudish@maine.edu</a>) and Christopher Mordaunt (<a href="mailto:christopher.mordaunt@maine.edu" style="color:var(--accent);text-decoration:none;">christopher.mordaunt@maine.edu</a>), University of Maine. Full letters of recommendation are available on request.</p>
   </div>
 </section>
 
@@ -399,7 +443,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <a href="mailto:md.sagor@maine.edu">md.sagor@maine.edu</a>
       <a href="https://www.linkedin.com/in/jahid96/">LinkedIn</a>
       <a href="https://github.com/jahidhasansagor-buet">GitHub</a>
-      <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID">Google Scholar</a>
+      <a href="https://scholar.google.com/citations?user=m-4lmIEAAAAJ">Google Scholar</a>
     </div>
   </div>
 </section>
