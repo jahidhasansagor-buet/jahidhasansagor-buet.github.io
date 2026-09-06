@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications — Md Jahid Hasan Sagor</title>
-<meta name="description" content="Peer-reviewed journal articles and conference papers by Md Jahid Hasan Sagor.">
+<title>Gallery — Md Jahid Hasan Sagor</title>
+<meta name="description" content="Field photos from HVAC and utility operations at Eskayef Pharmaceuticals.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,7 +64,8 @@ nav {
 /* ---------- Home hero ---------- */
 header.hero { padding: 4rem 0 3rem; }
 .hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: center; }
-.hero h1 { font-family: var(--serif); font-weight: 600; font-size: 2.6rem; line-height: 1.15; margin-bottom: 1rem; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: 2.8rem; line-height: 1.1; margin-bottom: 0.8rem; }
+.hero-kicker { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; margin-bottom: 0.35rem; }
 .hero-role { font-size: 1.1rem; margin-bottom: 1rem; max-width: 34rem; }
 .hero-note { color: var(--muted); font-size: 0.95rem; max-width: 34rem; margin-bottom: 1.6rem; }
 .hero-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
@@ -141,6 +142,15 @@ p + p { margin-top: 0.9rem; }
 }
 
 /* ---------- Experience ---------- */
+.refs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.4rem; max-width: 52rem; }
+.ref-quote { font-style: italic; color: var(--muted); font-size: 0.92rem; line-height: 1.55; border-left: 2px solid var(--accent); padding-left: 0.9rem; margin-bottom: 0.7rem; }
+.ref-name { font-weight: 600; font-size: 0.96rem; }
+.ref-role { color: var(--muted); font-size: 0.88rem; }
+.ref-mail { font-size: 0.88rem; margin-top: 0.15rem; }
+.ref-mail a { color: var(--accent); text-decoration: none; }
+.ref-mail a:hover, .ref-mail a:focus-visible { text-decoration: underline; }
+.refs-note { margin-top: 1.6rem; color: var(--muted); font-size: 0.92rem; max-width: 52rem; }
+@media (max-width: 720px) { .refs { grid-template-columns: 1fr; } }
 .job { display: grid; grid-template-columns: 155px 1fr; gap: 1.5rem; margin-bottom: 1.8rem; max-width: 50rem; }
 .job-when { color: var(--muted); font-size: 0.9rem; padding-top: 0.15rem; }
 .job-org { color: var(--muted); font-size: 0.94rem; margin-bottom: 0.35rem; }
@@ -158,11 +168,13 @@ p + p { margin-top: 0.9rem; }
 .edu-meta { color: var(--muted); font-size: 0.92rem; }
 .plain-list { margin-left: 1.2rem; max-width: 46rem; }
 .plain-list li { margin-bottom: 0.4rem; font-size: 0.96rem; }
-.slides-embed { max-width: 46rem; margin: 1.6rem 0 0; }
-.slides-embed iframe { width: 100%; aspect-ratio: 1280 / 749; border: 1px solid var(--line); border-radius: 4px; display: block; background: #fff; }
-.slides-embed figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
 
 /* ---------- Contact / footer ---------- */
+.gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem 1.2rem; max-width: 56rem; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; height: 190px; object-fit: cover; border: 1px solid var(--line); border-radius: 4px; display: block; }
+.gallery figcaption { font-size: 0.8rem; color: var(--muted); margin-top: 0.35rem; line-height: 1.4; }
+@media (max-width: 720px) { .gallery { grid-template-columns: 1fr 1fr; } .gallery img { height: 130px; } }
 .contact-band { background: var(--accent-soft); border-top: 1px solid var(--line); }
 .contact-band .wrap { padding-top: 2.8rem; padding-bottom: 2.8rem; }
 .contact-band h2 { margin-bottom: 0.8rem; }
@@ -195,101 +207,64 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
       <a href="projects.html">Projects</a>
-      <a href="publications.html" aria-current="page">Publications</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="publications.html">Publications</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </div>
 </nav>
 
 <div class="page-head wrap">
-  <h1>Publications</h1>
-  <p>Nine peer-reviewed publications · 80 citations · <a href="https://scholar.google.com/citations?user=m-4lmIEAAAAJ" style="color:var(--accent)">Google Scholar profile</a></p>
+  <h1>Gallery</h1>
+  <p>Field photos from the systems I operated and commissioned.</p>
 </div>
 
-<section>
+<section style="border-top: none; padding-top: 1rem;">
   <div class="wrap">
-    <h2>Journal articles</h2>
-    <div class="pub-group">
-
-      <!-- ===== PUBLICATION BLOCK — copy this whole block to add a paper ===== -->
-      <div class="pub highlight">
-        <div class="pub-title">A Comprehensive Framework for Predicting the Infrared Dielectric Function at Finite Temperatures from First Principles</div>
-        <div class="pub-meta">M. J. H. Sagor and S. Edalatpour</div>
-        <div class="pub-status">In preparation</div>
-      </div>
-      <!-- ===== end of publication block ===== -->
-
-      <div class="pub highlight">
-        <div class="pub-title">Effect of Temperature-Induced Dielectric Response on Radiative Heat Transfer in the Extreme Near-Field Regime</div>
-        <div class="pub-meta">M. J. H. Sagor and S. Edalatpour — Physical Review B, 2026</div>
-        <div class="pub-status">Under review</div>
-      </div>
-
-      <div class="pub highlight">
-        <div class="pub-title"><a href="https://doi.org/10.1103/PhysRevB.109.235411">Phonon Thermal Transport between Two in-Plane, Two-Dimensional Nanoribbons in the Extreme Near-Field Regime</a></div>
-        <div class="pub-meta">M. J. H. Sagor and S. Edalatpour — Physical Review B, 109, 235411 (2024)</div>
-        <div class="pub-links"><a href="https://doi.org/10.1103/PhysRevB.109.235411">DOI: 10.1103/PhysRevB.109.235411</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title"><a href="https://doi.org/10.1115/1.4053214">Effect of Parameters of Rotating Cylinders on the Heat Transfer Advancement</a></div>
-        <div class="pub-meta">E. Azim, M. J. H. Sagor, S. S. Hridoy, A. Hasan, S. Rahman, A. Alim, and T. Abdelhamid — Journal of Heat Transfer, 144, 022601 (2022)</div>
-        <div class="pub-links"><a href="https://doi.org/10.1115/1.4053214">DOI: 10.1115/1.4053214</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title"><a href="https://doi.org/10.1016/j.icheatmasstransfer.2021.105772">Evaluation of Overall Thermal Performance for Conjugate Natural Convection in a Trapezoidal Cavity with Different Surface Corrugations</a></div>
-        <div class="pub-meta">S. S. Prince, E. H. Rozin, M. J. H. Sagor, and S. Saha — International Communications in Heat and Mass Transfer, 130, 105772 (2022)</div>
-        <div class="pub-links"><a href="https://doi.org/10.1016/j.icheatmasstransfer.2021.105772">DOI: 10.1016/j.icheatmasstransfer.2021.105772</a></div>
-      </div>
-
+    <h2>In the field</h2>
+    <p class="lede">From my time running HVAC and utility systems at Eskayef Pharmaceuticals, 2019&ndash;2021.</p>
+    <div class="gallery" style="margin-top: 1.4rem;">
+      <figure>
+        <img src="figures/gallery-trane-chiller.jpg" alt="Trane water-cooled centrifugal chiller in the plant room" loading="lazy">
+        <figcaption>Trane water-cooled chiller in the plant room.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-chiller-hmi.jpg" alt="Trane chiller controller showing condenser water temperatures and refrigerant pressure" loading="lazy">
+        <figcaption>Condenser data on the chiller controller.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-bms-scada.jpg" alt="BMS screen showing a makeup air unit with enthalpy wheel, cooling coils, and valve controls" loading="lazy">
+        <figcaption>A makeup air unit on the plant BMS.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-cooling-tower.jpg" alt="Condenser water piping and cooling towers on the roof during installation" loading="lazy">
+        <figcaption>Condenser water piping and cooling towers during installation.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-steam-line.jpg" alt="Insulated steam distribution lines and valves" loading="lazy">
+        <figcaption>Steam distribution lines and valves.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-filter-vessels.jpg" alt="Filter pressure vessels in the water treatment plant" loading="lazy">
+        <figcaption>Filter vessels in the water treatment plant.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-control-panel.jpg" alt="Control panel wiring with contactors, relays, and circuit breakers" loading="lazy">
+        <figcaption>Inside a control panel: contactors, relays, and breakers.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-ahu-panel.jpg" alt="Control section of an air handling unit during installation" loading="lazy">
+        <figcaption>Control section of an air handling unit.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-valve-gearbox.jpg" alt="Opened worm gearbox of a valve actuator during maintenance" loading="lazy">
+        <figcaption>Valve actuator gearbox opened for maintenance.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/gallery-friends.jpg" alt="With colleagues Ehsanul Ezim and Shadman Sakief" loading="lazy">
+        <figcaption>With Ehsanul Ezim and Shadman Sakief.</figcaption>
+      </figure>
     </div>
-
-    <h2>Conference papers</h2>
-    <div class="pub-group">
-
-      <div class="pub">
-        <div class="pub-title"><a href="https://doi.org/10.1063/5.0037522">Entropy Analysis due to Conjugate Natural Convection in Water–Al₂O₃ Nanofluid Filled Prismatic Cavity</a></div>
-        <div class="pub-meta">M. J. H. Sagor, A. B. M. R. Hasan, and S. Saha — AIP Conference Proceedings, 2324, 050022 (2021)</div>
-        <div class="pub-links"><a href="https://doi.org/10.1063/5.0037522">DOI: 10.1063/5.0037522</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title"><a href="https://doi.org/10.1063/5.0037524">Investigation on Conjugate Mixed Convection inside a Square Cavity with Heat Generating Rotating Circular Cylinder</a></div>
-        <div class="pub-meta">E. Azim, M. J. H. Sagor, A. Hasan, and S. Saha — AIP Conference Proceedings, 2324 (2021)</div>
-        <div class="pub-links"><a href="https://doi.org/10.1063/5.0037524">DOI: 10.1063/5.0037524</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title"><a href="https://doi.org/10.5109/4738575">Investigating Variation of Dynamic Frictional Effect of Different Textile Fabrics Against Dry and Wet Human Skin Condition at a Fixed Load</a></div>
-        <div class="pub-meta">S. S. Hridoy, E. Azim, and M. J. H. Sagor — International Exchange and Innovation Conference on Engineering &amp; Sciences (2021)</div>
-        <div class="pub-links"><a href="https://doi.org/10.5109/4738575">DOI: 10.5109/4738575</a></div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-title"><a href="https://doi.org/10.1063/1.5115846">Effect of Heating Condition on Entropy Generation of Conjugate Natural Convection in a Prismatic Enclosure</a></div>
-        <div class="pub-meta">A. Hasan, M. J. H. Sagor, S. Barua, and S. Saha — AIP Conference Proceedings, 2121, 030001 (2019)</div>
-        <div class="pub-links"><a href="https://doi.org/10.1063/1.5115846">DOI: 10.1063/1.5115846</a></div>
-      </div>
-
-    </div>
-
-    <h2>Conference presentations</h2>
-    <ul class="plain-list">
-      <li>ASME IMECE 2023 — New Orleans, USA (travel funded through NSF grant)</li>
-      <li>8th BSME International Conference 2018 — Dhaka, Bangladesh</li>
-    </ul>
-
-    <figure class="slides-embed">
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT4X00P4eZOYgAwXPSqqQBBNKGndhv-1ojXceZHspzsKCkAgLoJoIs2L0w8CjVsGw/pubembed?start=false&amp;loop=false&amp;delayms=3000" title="Presentation slides — ASME IMECE 2023" style="aspect-ratio: 960 / 749;" allowfullscreen loading="lazy"></iframe>
-      <figcaption>Presentation slides from ASME IMECE 2023, New Orleans: phonon heat transfer across sub-nanometer vacuum gaps.</figcaption>
-    </figure>
-
-    <figure class="slides-embed">
-      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS6Xp_3_KkJBxMnllcT3V0P8Q3tEYOIq1OOPiUg64hcP1KrXJ_7CsReLkefLRbPxlOb-yBK11QlYfra/pubembed?start=false&amp;loop=false&amp;delayms=3000" title="Presentation slides — 8th BSME International Conference 2018" allowfullscreen loading="lazy"></iframe>
-      <figcaption>Presentation slides from the 8th BSME International Conference 2018, Dhaka. The paper was later published in AIP Conference Proceedings.</figcaption>
-    </figure>
   </div>
 </section>
 
