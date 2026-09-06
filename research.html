@@ -136,6 +136,9 @@ p + p { margin-top: 0.9rem; }
 .paper-figures.three { grid-template-columns: 1fr 1fr 1fr; max-width: 52rem; }
 .paper-figures.three img { height: 175px; }
 .paper-figures figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
+.paper-figure-wide { max-width: 44rem; margin: 1.4rem 0 0.4rem; }
+.paper-figure-wide img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; padding: 0.8rem; box-sizing: border-box; }
+.paper-figure-wide figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
 .paper-tools { margin-top: 1rem; font-size: 0.9rem; color: var(--muted); padding-top: 0.7rem; border-top: 1px solid var(--line); }
 .paper-tools strong { color: var(--ink); font-weight: 600; }
 @media (max-width: 720px) {
@@ -285,6 +288,11 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
       <h4>Result</h4>
       <p>Tested on graphene, silicon, and gold. Computed silicon absorption at 300&nbsp;K lands on the experimental data. The static-lattice calculation misses everything below the band gap. The output is temperature-resolved dielectric data that heat transfer models can use directly.</p>
+
+      <figure class="paper-figure-wide">
+        <img src="figures/epsilon-workflow.svg" alt="Flowchart of the first-principles workflow: structure optimization and CPMD in Quantum ESPRESSO, harmonic and anharmonic phonons via DFPT, SDM, and ASDM, temperature-dependent Kohn-Sham calculations, and GW plus Bethe-Salpeter in Yambo, ending in the real and imaginary parts of the dielectric tensor">
+        <figcaption>The workflow: from structure optimization to the temperature-dependent dielectric tensor. Harmonic and anharmonic lattice treatments, with and without electron&ndash;hole interactions, feed the same final output.</figcaption>
+      </figure>
 
       <div class="paper-figures">
         <figure>
