@@ -120,6 +120,14 @@ p + p { margin-top: 0.9rem; }
 .project-links { margin-top: 0.7rem; font-size: 0.9rem; }
 .project-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
 .project-links a:hover, .project-links a:focus-visible { text-decoration: underline; }
+.tag-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; }
+.tag-nav a {
+  display: inline-block; padding: 0.3rem 0.85rem;
+  border: 1px solid var(--line); border-radius: 999px;
+  color: var(--muted); text-decoration: none; font-size: 0.86rem; font-weight: 500;
+}
+.tag-nav a:hover, .tag-nav a:focus-visible { border-color: var(--accent); color: var(--accent); }
+.project { scroll-margin-top: 4.5rem; }
 .project-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1rem 0 0.2rem; }
 .project-figures figure { margin: 0; }
 .project-figures img, .project-figures iframe { width: 100%; height: 220px; border: 1px solid var(--line); border-radius: 4px; background: #fff; display: block; }
@@ -212,6 +220,13 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 <div class="page-head wrap">
   <h1>Projects</h1>
   <p>Hands-on engineering work: what the problem was, how I solved it, and what it produced.</p>
+  <div class="tag-nav" aria-label="Jump to a project">
+    <a href="#automation">Automation &amp; Controls</a>
+    <a href="#hvac-load">HVAC · Cooling Load</a>
+    <a href="#autocad">AutoCAD</a>
+    <a href="#matlab">MATLAB</a>
+    <a href="#solidworks">SolidWorks</a>
+  </div>
 </div>
 
 <section>
@@ -223,7 +238,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
          delete everything from START to END.
          ============================================================ -->
     <!-- PROJECT START -->
-    <div class="project">
+    <div class="project" id="automation">
       <h3>Temperature-Based Chilled Water Automation and Control System</h3>
       <div class="project-context">Eskayef Pharmaceuticals Ltd. · 2020</div>
       <p><strong>The problem:</strong> chilled water supply to a process line was controlled by manual valve operation, causing temperature fluctuations and constant operator attention.</p>
@@ -270,7 +285,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <!-- PROJECT END -->
 
     <!-- PROJECT START -->
-    <div class="project">
+    <div class="project" id="hvac-load">
       <h3>Cooling Load Calculation of a Single-Zone Conditioned Space Using the CLTD/CLF Method</h3>
       <div class="project-context">Independent Project · September 2026</div>
       <p><strong>The problem:</strong> before the air-conditioning capacity for a single-zone conditioned space can be estimated, its peak cooling load has to be calculated.</p>
@@ -294,7 +309,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <!-- PROJECT END -->
 
     <!-- PROJECT START -->
-    <div class="project">
+    <div class="project" id="autocad">
       <h3>Engineering Drawing Portfolio (AutoCAD 2026)</h3>
       <div class="project-context">Independent work · July–August 2026</div>
       <p>Three 2D drawings completed to keep my drafting skills current alongside my Ph.D. research:</p>
@@ -325,7 +340,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <!-- PROJECT END -->
 
     <!-- PROJECT START -->
-    <div class="project">
+    <div class="project" id="matlab">
       <h3>Digital Psychrometric Chart in MATLAB</h3>
       <div class="project-context">BUET</div>
       <p><strong>The problem:</strong> reading air properties off a paper psychrometric chart is slow and error-prone for repeated HVAC calculations.</p>
@@ -356,7 +371,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <!-- PROJECT END -->
 
     <!-- PROJECT START -->
-    <div class="project">
+    <div class="project" id="solidworks">
       <h3>Automatic Juice Making Machine</h3>
       <div class="project-context">BUET</div>
       <p>Designed and fabricated a machine for effortless lime juice extraction using a rotating squeezing mechanism. Rotating parts were designed in SolidWorks and manufactured by molding and aluminium casting in the BUET foundry lab, followed by functional testing of the working prototype.</p>
