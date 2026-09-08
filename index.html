@@ -63,7 +63,7 @@ nav {
 
 /* ---------- Home hero ---------- */
 header.hero { padding: 4rem 0 3rem; }
-.hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: start; }
 .hero h1 { font-family: var(--serif); font-weight: 600; font-size: 2.8rem; line-height: 1.1; margin-bottom: 0.8rem; }
 .hero-kicker { color: var(--accent); font-weight: 600; letter-spacing: 0.02em; margin-bottom: 0.35rem; }
 .hero-role { font-size: 1.1rem; margin-bottom: 1rem; max-width: 34rem; }
@@ -77,8 +77,9 @@ header.hero { padding: 4rem 0 3rem; }
 .hero-links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .hero-links a:hover, .hero-links a:focus-visible { border-color: var(--accent); color: var(--accent); }
 .hero-links a.primary:hover, .hero-links a.primary:focus-visible { background: #7a250f; color: #fff; }
-.gap-figure { width: 100%; }
-.gap-caption { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
+.hero-figure { margin: 0; align-self: stretch; contain: size; display: flex; flex-direction: column; }
+.gap-figure { display: block; width: 100%; flex: 0 1 auto; min-height: 0; object-fit: contain; object-position: top center; }
+.gap-caption { font-size: 0.78rem; color: var(--muted); margin-top: 0.4rem; text-align: center; flex: none; }
 
 /* ---------- Sections ---------- */
 section { padding: 2.8rem 0; border-top: 1px solid var(--line); }
@@ -182,6 +183,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 /* ---------- Responsive ---------- */
 @media (max-width: 720px) {
   .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-figure { contain: none; align-self: auto; display: block; }
   .gap-figure { max-width: 340px; margin: 0 auto; display: block; }
   .research-topics { grid-template-columns: 1fr; }
   .job { grid-template-columns: 1fr; gap: 0.2rem; }
@@ -210,10 +212,10 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 </nav>
 
 <header class="hero wrap">
+  <p class="hero-kicker">Hi, this is</p>
+  <h1>Md Jahid Hasan Sagor</h1>
   <div class="hero-grid">
     <div>
-      <p class="hero-kicker">Hi, this is</p>
-      <h1>Md Jahid Hasan Sagor</h1>
       <p class="hero-role">I am a Ph.D. candidate in Mechanical Engineering at the University of Maine, with research focused on nanoscale heat transfer and computational modeling. My broader engineering experience includes computational fluid dynamics, thermal systems, HVAC engineering, and mechanical design.</p>
       <p class="hero-note"><strong>Current interests:</strong> heat transfer from the nanoscale to larger thermal systems, CFD, data-center cooling, HVAC, and mechanical design.</p>
       <div class="hero-links">
@@ -223,10 +225,10 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
         <a href="https://github.com/jahidhasansagor-buet">GitHub</a>
       </div>
     </div>
-    <div>
+    <figure class="hero-figure">
       <img class="gap-figure" src="figures/graphene-heat-transfer.jpg" alt="Two graphene sheets separated by a gap smaller than 10 nanometers, with heat crossing through electron, phonon, and photon channels">
-      <p class="gap-caption">At the nanoscale, you cannot design reliable devices without knowing how much heat is transferred and which mechanism carries it.</p>
-    </div>
+      <figcaption class="gap-caption">At the nanoscale, you cannot design reliable devices without knowing how much heat is transferred and which mechanism carries it.</figcaption>
+    </figure>
   </div>
 </header>
 
