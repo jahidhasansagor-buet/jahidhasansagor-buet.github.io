@@ -276,6 +276,8 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
        Effect of Temperature-Induced Dielectric Response on Radiative Heat Transfer in the Extreme Near-Field Regime · Physical Review B ·
       <a href="https://journals.aps.org/prb/accepted/10.1103/ld38-1n1w">DOI</a>
       </div>
+      <p style="font-size: 0.9rem; margin-top: 0.6rem;"><strong>Code &amp; inputs:</strong> all Quantum ESPRESSO and Yambo input files for these calculations, with a documented step-by-step workflow, are available on <a href="https://github.com/jahidhasansagor-buet/High-Temperature-Radiative-Properties-of-Graphene" style="color: var(--accent); text-decoration: none; font-weight: 500;">GitHub</a>.</p>
+     </div>
 
       <h4>Problem</h4>
      <p>
@@ -292,26 +294,41 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
         Using ground-state dielectric properties underpredicts the radiative conductance by 32–43% at 1200&nbsp;K. Neglecting phonon anharmonicity underpredicts the conductance by up to 25.6% at 750&nbsp;K. These results show that temperature-dependent material properties are essential for accurate heat-transfer predictions in the extreme near-field regime.
        </p>
       
-       <div class="paper-figures">
-        <figure>
-          <img src="figures/enfrht-system.png" alt="Two media at slightly different temperatures separated by a vacuum gap, exchanging radiative heat">
-          <figcaption>The system: two media, an atomic-scale vacuum gap, heat crossing by thermal radiation.</figcaption>
-        </figure>
-        <figure>
-          <img src="figures/enfrht-conductance.png" alt="Radiative conductance versus gap size computed with 0 K, 300 K, and 1200 K dielectric functions">
-          <figcaption>Same material, three property datasets. The 0&nbsp;K curve misses the 1200&nbsp;K answer badly.</figcaption>
-        </figure>
-        <figure>
-          <img src="figures/enfrht-band-structure.jpg" alt="First-principles electronic band structure of graphene along the Gamma-K-M-Gamma path, with the bands touching at the K point">
-          <figcaption>Graphene's electronic band structure along &Gamma;&ndash;K&ndash;M&ndash;&Gamma;, computed from first principles. The bands meet at K with no gap.</figcaption>
-        </figure>
-        <figure>
-          <img src="figures/enfrht-band-surface.jpg" alt="Three-dimensional surface plot of graphene's pi bands over the Brillouin zone, with valence and conduction bands touching at the Dirac points">
-          <figcaption>The same bands as a surface over the full Brillouin zone. Valence and conduction bands touch at the Dirac points.</figcaption>
-        </figure>
-      </div>
+<div class="paper-figures">
+  <figure>
+    <img src="figures/enfrht-system.png"
+         alt="Two media at slightly different temperatures separated by an atomic-scale vacuum gap, exchanging radiative heat">
+    <figcaption>
+      Schematic of radiative heat transfer across an atomic-scale vacuum gap between two media.
+    </figcaption>
+  </figure>
 
-      <p class="paper-tools"><strong>Tools:</strong> NEGF, DFT, anharmonic special displacement method, Quantum ESPRESSO, Yambo, HPC</p>
+  <figure>
+    <img src="figures/enfrht-conductance.png"
+         alt="Radiative conductance versus gap size computed using dielectric functions at 0 K, 300 K, and 1200 K">
+    <figcaption>
+      Radiative conductance calculated using dielectric properties at 0, 300, and 1200&nbsp;K. Ground-state properties substantially underpredict the conductance at 1200&nbsp;K.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="figures/enfrht-band-structure.jpg"
+         alt="First-principles electronic band structure of graphene along the Gamma-K-M-Gamma path, with the valence and conduction bands meeting at the K point">
+    <figcaption>
+      Electronic band structure of graphene along &Gamma;&ndash;K&ndash;M&ndash;&Gamma;, showing the valence and conduction bands meeting at the Dirac point.
+    </figcaption>
+  </figure>
+
+  <figure>
+    <img src="figures/enfrht-band-surface.jpg"
+         alt="Three-dimensional surface plot of graphene's electronic bands over the first Brillouin zone, with valence and conduction bands touching at the Dirac points">
+    <figcaption>
+      Three-dimensional view of the graphene band structure over the first Brillouin zone, showing the Dirac points where the valence and conduction bands meet.
+    </figcaption>
+  </figure>
+</div>
+
+      <p class="paper-tools"><strong>Methods &amp; tools:</strong> NEGF, DFT, ASDM, Quantum ESPRESSO, Yambo, HPC</p>
       <p style="font-size: 0.9rem; margin-top: 0.6rem;"><strong>Code &amp; inputs:</strong> all Quantum ESPRESSO and Yambo input files for these calculations, with a documented step-by-step workflow, are available on <a href="https://github.com/jahidhasansagor-buet/High-Temperature-Radiative-Properties-of-Graphene" style="color: var(--accent); text-decoration: none; font-weight: 500;">GitHub</a>.</p>
     </div>
     <!-- ===== PAPER END ===== -->
