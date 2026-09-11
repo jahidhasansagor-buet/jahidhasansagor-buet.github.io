@@ -220,16 +220,16 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
     <div class="research-topics">
 
       <div class="topic">
-        <h3>Data-center and electronics cooling</h3>
+        <h3>Data center and electronics cooling</h3>
         <p>
-          Accurate heat-transfer prediction becomes increasingly important as chips become smaller and power densities rise. My work addresses heat transfer from nanoscale effects to practical cooling design.
+          Accurate heat transfer prediction matters more as chips get smaller and power densities rise. My work addresses heat transfer from nanoscale effects to cooling design.
         </p>
       </div>
 
       <div class="topic">
         <h3>Boilers and high-temperature equipment</h3>
         <p>
-          Radiative heat transfer dominates many high-temperature systems. Temperature-dependent material properties can improve heat-transfer predictions for boiler furnaces and other thermal equipment.
+          Radiative heat transfer dominates many high-temperature systems. Temperature-dependent material properties can improve heat transfer predictions for boiler furnaces and other thermal equipment.
         </p>
       </div>
 
@@ -250,14 +250,14 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
       <div class="topic">
         <h3>Solar collectors and thermal enclosures</h3>
         <p>
-          Natural-convection performance depends strongly on geometry, wall material, and heating conditions. CFD helps identify configurations that improve heat transfer.
+          Natural convection performance depends strongly on geometry, wall material, and heating conditions. CFD helps identify configurations that improve heat transfer.
         </p>
       </div>
 
       <div class="topic">
         <h3>Material properties for device simulation</h3>
         <p>
-          First-principles calculations provide temperature-dependent dielectric properties for metals, semiconductors, and 2D materials used in thermal and electromagnetic simulations.
+          First-principles calculations provide temperature-dependent dielectric properties for a wide range of materials, including metals, semiconductors, insulators, and low-dimensional systems.
         </p>
       </div>
 
@@ -271,19 +271,19 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
     <!-- ===== PAPER START ===== -->
     <div class="paper">
-      <div class="paper-title">Room-temperature material data breaks down at high temperature. Here is by how much.</div>
-      <div class="paper-ref">Effect of Temperature-Induced Dielectric Response on Radiative Heat Transfer in the Extreme Near-Field Regime · Physical Review B <span class="status">(under review)</span></div>
+      <div class="paper-title">Impact of finite-temperature material properties on radiative heat transfer.</div>
+      <div class="paper-ref">Effect of Temperature-Induced Dielectric Response on Radiative Heat Transfer in the Extreme Near-Field Regime · Physical Review B · <a href="https://journals.aps.org/prb/accepted/10.1103/ld38-1n1w">DOI</a></div>
 
       <h4>Problem</h4>
-      <p>Every prediction of nanoscale thermal radiation depends on one material input: the dielectric function. The whole field computes it at 0&nbsp;K, then applies it to systems running at 1000&nbsp;K. Nobody had measured the cost of that shortcut.</p>
+      <p>Most first-principles studies of extreme near-field radiative heat transfer use dielectric properties calculated at 0 K or, at most, room temperature, even when the materials operate at much higher temperatures. This misses the effects of phonon excitation, anharmonicity, and temperature-induced changes in the electronic structure on the dielectric response.</p>
 
       <h4>What I did</h4>
-      <p>Computed graphene's dielectric function at its actual temperature, 300 to 1200&nbsp;K, from first principles, with phonon excitations and anharmonicity included. Fed it into NEGF heat transfer calculations.</p>
+      <p>I calculated the frequency- and wavevector-dependent dielectric function at the actual material temperature using first-principles methods, including phonon excitations, all-order phonon scattering, and anharmonic effects. I then used these properties in a microscopic nonequilibrium Green’s function (NEGF) model for radiative heat transfer across atomic-scale gaps, where continuum approaches can become questionable.</p>
 
       <h4>Result</h4>
-      <p>The 0&nbsp;K shortcut underpredicts radiative conductance by 32–43% at 1200&nbsp;K. Anharmonic phonons alone account for up to 25.6% at 750&nbsp;K. Temperature-true properties are not a refinement. They are the difference between right and wrong.</p>
-
-      <div class="paper-figures">
+      <p>Using ground-state dielectric properties underpredicts the radiative conductance by 32–43% at 1200&nbsp;K. Neglecting phonon anharmonicity leads to an additional underestimation of up to 25.6% at 750&nbsp;K. These results show that temperature-dependent material properties are essential for accurate heat-transfer predictions in the extreme near-field regime.</p>      
+      
+       <div class="paper-figures">
         <figure>
           <img src="figures/enfrht-system.png" alt="Two media at slightly different temperatures separated by a vacuum gap, exchanging radiative heat">
           <figcaption>The system: two media, an atomic-scale vacuum gap, heat crossing by thermal radiation.</figcaption>
