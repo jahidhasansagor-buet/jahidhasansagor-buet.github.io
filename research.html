@@ -217,6 +217,7 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 <section>
   <div class="wrap">
     <h2>Applications</h2>
+    <p class="lede">My research connects nanoscale heat transfer and material modeling with practical thermal engineering applications.</p>
     <div class="research-topics">
       <div class="topic">
         <h3>Data center and electronics cooling</h3>
@@ -316,32 +317,60 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
     <!-- ===== PAPER START ===== -->
     <div class="paper">
-      <div class="paper-title">One workflow. Any material, any temperature, full infrared response.</div>
-      <div class="paper-ref">A Comprehensive Framework for Predicting the Infrared Dielectric Function at Finite Temperatures from First Principles <span class="status">(in preparation)</span></div>
-      <p class="paper-tools"><strong>Tools:</strong> DFT, DFPT phonons, many-body perturbation theory, SDM/ASDM, Quantum ESPRESSO, EPW, Yambo, HPC</p>
+      <div class="paper-title">
+        First-principles prediction of dielectric properties at finite temperature.
+      </div>
+
+      <div class="paper-ref">
+        A Comprehensive Framework for Predicting the Infrared Dielectric Function at Finite Temperatures from First Principles
+        <span class="status">(in preparation)</span>
+      </div>
+
+      <p class="paper-tools">
+        <strong>Methods &amp; tools:</strong> DFT, DFPT, SDM/ASDM, Quantum ESPRESSO, EPW, Yambo, HPC
+      </p>
 
       <h4>Problem</h4>
-      <p>The infrared dielectric function drives thermal radiation, sensing, and optoelectronics. Measuring it at every temperature is impractical. Computing it usually stops at 0&nbsp;K.</p>
+      <p>
+        Dielectric properties are commonly calculated for the equilibrium crystal structure, although the material itself changes with temperature. Thermal lattice vibrations modify the atomic positions, phonons, electronic structure, and ultimately the dielectric response. Experimental data are also not available for every material and operating temperature.
+      </p>
 
       <h4>What I did</h4>
-      <p>Built a validated first-principles pipeline: Quantum ESPRESSO electronic structure on thermally displaced atoms, Yambo many-body calculations on top. Handles metals, semiconductors, and 2D materials, with harmonic and anharmonic lattice effects.</p>
+      <p>
+        I developed a first-principles workflow to calculate the frequency-, wavevector-, and temperature-dependent dielectric response. The workflow generates temperature-dependent atomic configurations using harmonic or anharmonic phonons, recalculates the electronic structure at the target temperature, and then evaluates the dielectric tensor. I applied the same framework to graphene, silicon, and gold.
+      </p>
 
       <h4>Result</h4>
-      <p>Tested on graphene, silicon, and gold. Computed silicon absorption at 300&nbsp;K lands on the experimental data. The static-lattice calculation misses everything below the band gap. The output is temperature-resolved dielectric data that heat transfer models can use directly.</p>
+      <p>
+        The calculations show that lattice vibrations can change the dielectric response substantially, even near room temperature. For silicon, the 300&nbsp;K calculation reproduces the experimental absorption onset near 1.1&nbsp;eV, while the equilibrium structure misses the low-energy phonon-assisted absorption. For graphene, the dielectric response changes strongly with temperature, and the anharmonic contribution becomes increasingly important at higher temperatures.
+      </p>
 
       <figure class="paper-figure-wide">
-        <img src="figures/epsilon-workflow.svg" alt="Flowchart of the first-principles workflow: structure optimization and CPMD in Quantum ESPRESSO, harmonic and anharmonic phonons via DFPT, SDM, and ASDM, temperature-dependent Kohn-Sham calculations, and GW plus Bethe-Salpeter in Yambo, ending in the real and imaginary parts of the dielectric tensor">
-        <figcaption>The workflow: from structure optimization to the temperature-dependent dielectric tensor. Harmonic and anharmonic lattice treatments, with and without electron&ndash;hole interactions, feed the same final output.</figcaption>
+        <img
+          src="figures/epsilon-workflow.svg"
+          alt="First-principles workflow for calculating temperature-dependent dielectric properties using Quantum ESPRESSO, EPW, and Yambo">
+        <figcaption>
+          First-principles workflow for calculating temperature-dependent dielectric properties, from structure optimization and phonons to the final dielectric response.
+        </figcaption>
       </figure>
 
       <div class="paper-figures">
         <figure>
-          <img src="figures/epsilon-validation.png" alt="Computed silicon absorption at 300 K matching experimental data where the static lattice calculation fails">
-          <figcaption>Computed at 300&nbsp;K (blue) vs. experiment (red). The static-lattice curve (purple) fails below the gap.</figcaption>
+          <img
+            src="figures/epsilon-validation.png"
+            alt="Calculated silicon absorption coefficient at 300 K compared with experiment and the equilibrium static-lattice result">
+          <figcaption>
+            Silicon absorption at 300&nbsp;K compared with experiment. Including finite-temperature lattice effects recovers the low-energy absorption that is absent in the equilibrium calculation.
+          </figcaption>
         </figure>
+
         <figure>
-          <img src="figures/epsilon-temperature.png" alt="Imaginary part of the silicon dielectric function from 0 K to 750 K">
-          <figcaption>Silicon's optical response from 0 to 750&nbsp;K. This shift is what the framework captures.</figcaption>
+          <img
+            src="figures/graphene-temperature-response.png"
+            alt="Imaginary part of graphene dielectric function at 0.1 and 0.3 eV as a function of temperature for harmonic and anharmonic calculations">
+          <figcaption>
+            Temperature dependence of graphene's dielectric response at 0.1 and 0.3&nbsp;eV. Harmonic and anharmonic predictions begin to separate as temperature increases, while both differ from the equilibrium static-lattice values.
+          </figcaption>
         </figure>
       </div>
 
