@@ -380,28 +380,58 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
     <!-- ===== PAPER START ===== -->
     <div class="paper">
-      <div class="paper-title">Heat jumps across gaps smaller than an atom. First results for 2D materials.</div>
-      <div class="paper-ref">Phonon Thermal Transport between Two in-Plane, Two-Dimensional Nanoribbons in the Extreme Near-Field Regime · Physical Review B 109, 235411 (2024) · <a href="https://doi.org/10.1103/PhysRevB.109.235411">DOI</a></div>
-      <p class="paper-meta"><strong>Code:</strong> documented Python scripts for the phonon transmission calculations behind this paper, with and without a vacuum gap, are available on <a href="https://github.com/jahidhasansagor-buet/computational-nanoscale-heat-transfer" style="color: var(--accent); text-decoration: none; font-weight: 500;">GitHub</a>. The original MATLAB implementation is available on request.</p>
-      <p class="paper-tools"><strong>Tools:</strong> Atomistic Green's function method, Tersoff and Lennard-Jones potentials, MATLAB, HPC</p>
+      <div class="paper-title">
+        Phonon heat transfer across sub-nanometer gaps in 2D materials.
+      </div>
+
+      <div class="paper-ref">
+        Phonon Thermal Transport between Two In-Plane, Two-Dimensional Nanoribbons in the Extreme Near-Field Regime · Physical Review B 109, 235411 (2024) ·
+        <a href="https://doi.org/10.1103/PhysRevB.109.235411">DOI</a>
+      </div>
+
+      <p class="paper-meta">
+        <strong>Code:</strong> documented Python scripts for the phonon transmission calculations are available on
+        <a href="https://github.com/jahidhasansagor-buet/computational-nanoscale-heat-transfer"
+           style="color: var(--accent); text-decoration: none; font-weight: 500;">GitHub</a>.
+        The original MATLAB implementation is available on request.
+      </p>
+
+      <p class="paper-tools">
+        <strong>Methods &amp; tools:</strong> Atomistic Green's function (AGF), Tersoff and Lennard-Jones potentials, MATLAB, HPC
+      </p>
 
       <h4>Problem</h4>
-      <p>At sub-nanometer separations, lattice vibrations carry heat straight across a vacuum gap. This sets thermal limits in heat-assisted magnetic recording and scanning probe microscopy, and it controls how cracks and voids block heat in materials. For 2D materials, no one had the numbers.</p>
+      <p>
+        Phonon transport across extremely small vacuum gaps had been studied for bulk dielectric, semiconductor, and metallic materials, but not for two-dimensional materials. Understanding this transport is important for predicting thermal resistance created by nanoscale gaps, cracks, and voids in 2D materials.
+      </p>
 
       <h4>What I did</h4>
-      <p>Modeled phonon conductance between graphene and silicene nanoribbons with the atomistic Green's function method, verified against three independent published benchmarks first.</p>
+      <p>
+        I modeled phonon heat transfer between graphene and silicene nanoribbons separated by sub-nanometer vacuum gaps using the atomistic Green's function method. Interactions within the nanoribbons were described with the Tersoff potential and interactions across the gap with the Lennard-Jones potential. I also verified the AGF implementation against three independent results from the literature before applying it to the 2D systems.
+      </p>
 
       <h4>Result</h4>
-      <p>A 0.2&nbsp;Å gap, one fifth of a bond length, already cuts conductance by over an order of magnitude. The decay is exponential in three regimes set by the interatomic forces: e<sup>−10.0d</sup>, e<sup>−2.0d</sup>, then e<sup>−1.3d</sup>. Silicene overtakes graphene beyond 0.8&nbsp;Å because of its longer bonds.</p>
+      <p>
+        A gap of only 0.2&nbsp;&Aring; reduces the phonon conductance by more than one order of magnitude. For graphene, the conductance follows three exponential decay regimes as the dominant interaction changes from repulsive forces, to combined repulsive and attractive forces, and finally to van der Waals attraction. Silicene conductance decreases more slowly and exceeds graphene beyond a gap of about 0.8&nbsp;&Aring;.
+      </p>
 
       <div class="paper-figures">
         <figure>
-          <img src="figures/prb2024-system.png" alt="Two in-plane graphene nanoribbons separated by a vacuum gap, with graphene and silicene lattice structures">
-          <figcaption>Two 2D nanoribbons, one sub-nanometer gap, solved with the atomistic Green's function method.</figcaption>
+          <img
+            src="figures/prb2024-system.png"
+            alt="Two in-plane graphene or silicene nanoribbons separated by a sub-nanometer vacuum gap for atomistic Green's function calculations">
+          <figcaption>
+            Two in-plane 2D nanoribbons separated by a sub-nanometer vacuum gap. The gap is treated as the device region in the atomistic Green's function model.
+          </figcaption>
         </figure>
+
         <figure>
-          <img src="figures/prb2024-regimes.png" alt="Phonon conductance versus gap size showing three exponential decay regimes">
-          <figcaption>The key result: three exponential decay regimes, each governed by a different interatomic force.</figcaption>
+          <img
+            src="figures/prb2024-regimes.png"
+            alt="Phonon conductance versus vacuum gap size for graphene showing three exponential decay regimes">
+          <figcaption>
+            Phonon conductance decreases exponentially with gap size in three regimes, reflecting the change from repulsive to mixed and then attractive interatomic interactions.
+          </figcaption>
         </figure>
       </div>
 
