@@ -1,81 +1,511 @@
-<!-- ===== PAPER START ===== -->
-<div class="paper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Md Jahid Hasan Sagor</title>
+<meta name="description" content="Near-field radiative heat transfer and first-principles temperature-dependent material properties. Published in Physical Review B.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Md Jahid Hasan Sagor — personal website stylesheet
+   You normally never need to edit this file.
+   ============================================================ */
+:root {
+  --ink: #22272b;
+  --muted: #5a6570;
+  --line: #d9dde1;
+  --accent: #8f2d16;
+  --accent-soft: #f6ede9;
+  --bg: #ffffff;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans", -apple-system, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: 1rem;
+}
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-  <div class="paper-title">
-    Impact of finite-temperature material properties on radiative heat transfer.
+/* ---------- Navigation ---------- */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 880px; margin: 0 auto; padding: 0.8rem 1.5rem;
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.nav-name { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; padding: 0.2rem 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---------- Page headers ---------- */
+.page-head { padding: 3rem 0 0.5rem; }
+.page-head h1 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.6rem; }
+.page-head p { color: var(--muted); max-width: 44rem; }
+
+/* ---------- Home hero ---------- */
+header.hero { padding: 4rem 0 3rem; }
+.hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: center; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: 2.6rem; line-height: 1.15; margin-bottom: 1rem; }
+.hero-role { font-size: 1.1rem; margin-bottom: 1rem; max-width: 34rem; }
+.hero-note { color: var(--muted); font-size: 0.95rem; max-width: 34rem; margin-bottom: 1.6rem; }
+.hero-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.hero-links a {
+  display: inline-block; padding: 0.5rem 1rem;
+  border: 1px solid var(--line); border-radius: 3px;
+  color: var(--ink); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+}
+.hero-links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.hero-links a:hover, .hero-links a:focus-visible { border-color: var(--accent); color: var(--accent); }
+.hero-links a.primary:hover, .hero-links a.primary:focus-visible { background: #7a250f; color: #fff; }
+.gap-figure { width: 100%; }
+.gap-caption { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
+
+/* ---------- Sections ---------- */
+section { padding: 2.8rem 0; border-top: 1px solid var(--line); }
+h2 { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; margin-bottom: 1.4rem; }
+h2::after {
+  content: ""; display: block; width: 3rem; margin-top: 0.5rem;
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 4px 0 -2px var(--accent);
+}
+h3 { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; }
+p + p { margin-top: 0.9rem; }
+.lede { max-width: 46rem; }
+
+.research-topics { margin-top: 1.6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.4rem; }
+.topic h3 { margin-bottom: 0.3rem; }
+.topic p { color: var(--muted); font-size: 0.94rem; }
+
+/* ---------- Publications ---------- */
+.pub-group { margin-bottom: 2.2rem; }
+.pub { padding-left: 1.1rem; border-left: 2px solid var(--line); margin-bottom: 1.3rem; max-width: 50rem; }
+.pub.highlight { border-left-color: var(--accent); }
+.pub-title { font-weight: 600; }
+.pub-title a { color: var(--ink); text-decoration: none; }
+.pub-title a:hover, .pub-title a:focus-visible { color: var(--accent); }
+.pub-meta { color: var(--muted); font-size: 0.9rem; }
+.pub-status { color: var(--accent); font-size: 0.85rem; font-weight: 500; }
+.pub-links { font-size: 0.88rem; margin-top: 0.15rem; }
+.pub-links a { color: var(--accent); text-decoration: none; }
+.pub-links a:hover, .pub-links a:focus-visible { text-decoration: underline; }
+
+/* ---------- Projects ---------- */
+.project { border: 1px solid var(--line); border-radius: 4px; padding: 1.6rem 1.8rem; margin-bottom: 1.8rem; max-width: 52rem; }
+.project h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+.project-context { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.8rem; }
+.project p { font-size: 0.96rem; }
+.project ul { margin: 0.6rem 0 0 1.2rem; font-size: 0.96rem; }
+.project li { margin-bottom: 0.3rem; }
+.project-tools { margin-top: 0.9rem; font-size: 0.88rem; color: var(--muted); }
+.project-tools strong { color: var(--ink); font-weight: 600; }
+.project-links { margin-top: 0.7rem; font-size: 0.9rem; }
+.project-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.project-links a:hover, .project-links a:focus-visible { text-decoration: underline; }
+
+/* ---------- Research paper entries ---------- */
+.paper { margin-bottom: 3.2rem; max-width: 52rem; }
+.paper-title { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; line-height: 1.3; margin-bottom: 0.3rem; }
+.paper-ref { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
+.paper-ref a { color: var(--accent); text-decoration: none; }
+.paper-ref a:hover, .paper-ref a:focus-visible { text-decoration: underline; }
+.paper-ref .status { color: var(--accent); font-weight: 500; }
+.paper h4 { font-family: var(--sans); font-weight: 600; font-size: 0.98rem; margin: 1.1rem 0 0.25rem; }
+.paper p { font-size: 0.97rem; }
+.paper-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.4rem 0 0.4rem; max-width: 44rem; }
+.paper-figures figure { margin: 0; }
+.paper-figures img { max-width: 100%; width: auto; height: auto; max-height: 250px; display: block; margin: 0 auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; padding: 0.4rem; box-sizing: border-box; }
+.paper-figures.three { grid-template-columns: 1fr 1fr 1fr; max-width: 52rem; }
+.paper-figures.three img { max-height: 210px; }
+.paper-figures figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
+.paper-figure-wide { max-width: 44rem; margin: 1.4rem 0 0.4rem; }
+.paper-figure-wide img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: #fff; padding: 0.8rem; box-sizing: border-box; }
+.paper-figure-wide figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
+.paper-tools { margin-top: 1rem; font-size: 0.9rem; color: var(--muted); padding-top: 0.7rem; border-top: 1px solid var(--line); }
+.paper-tools strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 720px) {
+  .paper-figures { grid-template-columns: 1fr; }
+}
+
+/* ---------- Experience ---------- */
+.job { display: grid; grid-template-columns: 155px 1fr; gap: 1.5rem; margin-bottom: 1.8rem; max-width: 50rem; }
+.job-when { color: var(--muted); font-size: 0.9rem; padding-top: 0.15rem; }
+.job-org { color: var(--muted); font-size: 0.94rem; margin-bottom: 0.35rem; }
+.job ul { margin: 0.4rem 0 0 1.1rem; }
+.job li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+
+/* ---------- Skills / education / honors ---------- */
+.skill-rows { max-width: 48rem; }
+.skill-row { display: grid; grid-template-columns: 200px 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+.skill-row:last-child { border-bottom: none; }
+.skill-row dt { font-weight: 600; font-size: 0.94rem; }
+.skill-row dd { color: var(--muted); font-size: 0.94rem; }
+.edu { margin-bottom: 1rem; max-width: 46rem; }
+.edu-degree { font-weight: 600; }
+.edu-meta { color: var(--muted); font-size: 0.92rem; }
+.plain-list { margin-left: 1.2rem; max-width: 46rem; }
+.plain-list li { margin-bottom: 0.4rem; font-size: 0.96rem; }
+
+/* ---------- Contact / footer ---------- */
+.contact-band { background: var(--accent-soft); border-top: 1px solid var(--line); }
+.contact-band .wrap { padding-top: 2.8rem; padding-bottom: 2.8rem; }
+.contact-band h2 { margin-bottom: 0.8rem; }
+.contact-band p { max-width: 42rem; }
+.contact-links { margin-top: 1.2rem; display: flex; gap: 1.6rem; flex-wrap: wrap; }
+.contact-links a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; }
+.contact-links a:hover, .contact-links a:focus-visible { border-bottom-color: var(--accent); }
+footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .gap-figure { max-width: 340px; margin: 0 auto; display: block; }
+  .research-topics { grid-template-columns: 1fr; }
+  .job { grid-template-columns: 1fr; gap: 0.2rem; }
+  .skill-row { grid-template-columns: 1fr; gap: 0.1rem; }
+  .hero h1 { font-size: 2.1rem; }
+  .page-head h1 { font-size: 1.8rem; }
+  .project { padding: 1.2rem 1.2rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html">Md Jahid Hasan Sagor</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
   </div>
+</nav>
 
-  <div class="paper-ref">
-    Effect of Temperature-Induced Dielectric Response on Radiative Heat Transfer in the Extreme Near-Field Regime · Physical Review B ·
-    <a href="https://journals.aps.org/prb/accepted/10.1103/ld38-1n1w">DOI</a>
-  </div>
-
-  <h4>Problem</h4>
-  <p>
-    Most first-principles studies of extreme near-field radiative heat transfer use dielectric properties calculated at 0 K or, at most, room temperature, even when the materials operate at much higher temperatures. This misses the effects of phonon excitation, anharmonicity, and temperature-induced changes in the electronic structure on the dielectric response.
-  </p>
-
-  <h4>What I did</h4>
-  <p>
-    I calculated the frequency- and wavevector-dependent dielectric function at the actual material temperature using first-principles methods, including phonon excitations, all-order phonon scattering, and anharmonic effects. I then used these properties in a microscopic nonequilibrium Green’s function (NEGF) model for radiative heat transfer across atomic-scale gaps, where continuum approaches can become questionable.
-  </p>
-
-  <h4>Result</h4>
-  <p>
-    Using ground-state dielectric properties underpredicts the radiative conductance by 32–43% at 1200&nbsp;K. Neglecting phonon anharmonicity underpredicts the conductance by up to 25.6% at 750&nbsp;K. These results show that temperature-dependent material properties are essential for accurate heat-transfer predictions in the extreme near-field regime.
-  </p>
-
-  <div class="paper-figures">
-
-    <figure>
-      <img
-        src="figures/enfrht-system.png"
-        alt="Two media at slightly different temperatures separated by an atomic-scale vacuum gap, exchanging radiative heat">
-      <figcaption>
-        Schematic of radiative heat transfer across an atomic-scale vacuum gap between two media.
-      </figcaption>
-    </figure>
-
-    <figure>
-      <img
-        src="figures/enfrht-conductance.png"
-        alt="Radiative conductance versus gap size computed using dielectric functions at 0 K, 300 K, and 1200 K">
-      <figcaption>
-        Radiative conductance calculated using dielectric properties at 0, 300, and 1200&nbsp;K. Ground-state properties substantially underpredict the conductance at 1200&nbsp;K.
-      </figcaption>
-    </figure>
-
-    <figure>
-      <img
-        src="figures/enfrht-band-structure.jpg"
-        alt="First-principles electronic band structure of graphene along the Gamma-K-M-Gamma path, with the valence and conduction bands meeting at the K point">
-      <figcaption>
-        Electronic band structure of graphene along &Gamma;&ndash;K&ndash;M&ndash;&Gamma;, showing the valence and conduction bands meeting at the Dirac point.
-      </figcaption>
-    </figure>
-
-    <figure>
-      <img
-        src="figures/enfrht-band-surface.jpg"
-        alt="Three-dimensional surface plot of graphene's electronic bands over the first Brillouin zone, with valence and conduction bands touching at the Dirac points">
-      <figcaption>
-        Three-dimensional view of the graphene band structure over the first Brillouin zone, showing the Dirac points where the valence and conduction bands meet.
-      </figcaption>
-    </figure>
-
-  </div>
-
-  <p class="paper-tools">
-    <strong>Methods &amp; tools:</strong> NEGF, DFT, ASDM, Quantum ESPRESSO, Yambo, HPC
-  </p>
-
-  <p style="font-size: 0.9rem; margin-top: 0.6rem;">
-    <strong>Code &amp; inputs:</strong> all Quantum ESPRESSO and Yambo input files for these calculations, with a documented step-by-step workflow, are available on
-    <a href="https://github.com/jahidhasansagor-buet/High-Temperature-Radiative-Properties-of-Graphene"
-       style="color: var(--accent); text-decoration: none; font-weight: 500;">
-      GitHub
-    </a>.
-  </p>
-
+<div class="page-head wrap">
+  <h1>Research</h1>
+  <p>I predict heat transfer where classical models fail. Three first-author papers, one question: what really happens when heat crosses a nanoscale gap at real operating temperatures?</p>
 </div>
-<!-- ===== PAPER END ===== -->
+
+<section>
+  <div class="wrap">
+    <h2>Applications</h2>
+    <p class="lede">This work feeds directly into technologies where thermal design decides performance.</p>
+    <div class="research-topics">
+      <div class="topic">
+        <h3>Electronics and data-center cooling</h3>
+        <p>As chips and interconnects shrink toward the nanoscale, classical heat transfer models stop working. Predicting heat flow correctly at these scales is what keeps devices within thermal limits.</p>
+      </div>
+      <div class="topic">
+        <h3>Heat-assisted magnetic recording</h3>
+        <p>HAMR drive heads fly sub-nanometer above the disk. Phonon and radiative transport across that gap sets the thermal budget of the whole read-write process.</p>
+      </div>
+      <div class="topic">
+        <h3>Near-field energy conversion</h3>
+        <p>Thermophotovoltaic and thermal-management devices exploit radiation that exceeds the blackbody limit at nanoscale gaps. Their design needs material properties at real operating temperatures, not 0&nbsp;K.</p>
+      </div>
+      <div class="topic">
+        <h3>Thermal sensing and scanning probes</h3>
+        <p>Scanning thermal microscopy reads temperature through a tip-sample gap. Interpreting the signal requires knowing how heat actually crosses that gap.</p>
+      </div>
+      <div class="topic">
+        <h3>Solar thermal and enclosure design</h3>
+        <p>Solar collectors, solar ponds, and electronic enclosures are natural convection problems with conducting walls. My CFD work maps which geometry, material, and heating choices move the most heat.</p>
+      </div>
+      <div class="topic">
+        <h3>Material data for device modeling</h3>
+        <p>Every thermal radiation model needs a dielectric function as input. My framework supplies it at any temperature, for metals, semiconductors, and 2D materials, from first principles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ph.D. research</h2>
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">
+        Impact of finite-temperature material properties on radiative heat transfer.
+      </div>
+      <div class="paper-ref">
+        Effect of Temperature-Induced Dielectric Response on Radiative Heat Transfer in the Extreme Near-Field Regime · Physical Review B ·
+        <a href="https://journals.aps.org/prb/accepted/10.1103/ld38-1n1w">DOI</a>
+      </div>
+      <h4>Problem</h4>
+      <p>
+        Most first-principles studies of extreme near-field radiative heat transfer use dielectric properties calculated at 0 K or, at most, room temperature, even when the materials operate at much higher temperatures. This misses the effects of phonon excitation, anharmonicity, and temperature-induced changes in the electronic structure on the dielectric response.
+      </p>
+      <h4>What I did</h4>
+      <p>
+        I calculated the frequency- and wavevector-dependent dielectric function at the actual material temperature using first-principles methods, including phonon excitations, all-order phonon scattering, and anharmonic effects. I then used these properties in a microscopic nonequilibrium Green’s function (NEGF) model for radiative heat transfer across atomic-scale gaps, where continuum approaches can become questionable.
+      </p>
+      <h4>Result</h4>
+      <p>
+        Using ground-state dielectric properties underpredicts the radiative conductance by 32–43% at 1200&nbsp;K. Neglecting phonon anharmonicity underpredicts the conductance by up to 25.6% at 750&nbsp;K. These results show that temperature-dependent material properties are essential for accurate heat-transfer predictions in the extreme near-field regime.
+      </p>
+      <div class="paper-figures">
+        <figure>
+          <img
+            src="figures/enfrht-system.png"
+            alt="Two media at slightly different temperatures separated by an atomic-scale vacuum gap, exchanging radiative heat">
+          <figcaption>
+            Schematic of radiative heat transfer across an atomic-scale vacuum gap between two media.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="figures/enfrht-conductance.png"
+            alt="Radiative conductance versus gap size computed using dielectric functions at 0 K, 300 K, and 1200 K">
+          <figcaption>
+            Radiative conductance calculated using dielectric properties at 0, 300, and 1200&nbsp;K. Ground-state properties substantially underpredict the conductance at 1200&nbsp;K.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="figures/enfrht-band-structure.jpg"
+            alt="First-principles electronic band structure of graphene along the Gamma-K-M-Gamma path, with the valence and conduction bands meeting at the K point">
+          <figcaption>
+            Electronic band structure of graphene along &Gamma;&ndash;K&ndash;M&ndash;&Gamma;, showing the valence and conduction bands meeting at the Dirac point.
+          </figcaption>
+        </figure>
+        <figure>
+          <img
+            src="figures/enfrht-band-surface.jpg"
+            alt="Three-dimensional surface plot of graphene's electronic bands over the first Brillouin zone, with valence and conduction bands touching at the Dirac points">
+          <figcaption>
+            Three-dimensional view of the graphene band structure over the first Brillouin zone, showing the Dirac points where the valence and conduction bands meet.
+          </figcaption>
+        </figure>
+      </div>
+      <p class="paper-tools">
+        <strong>Methods &amp; tools:</strong> NEGF, DFT, ASDM, Quantum ESPRESSO, Yambo, HPC
+      </p>
+      <p style="font-size: 0.9rem; margin-top: 0.6rem;">
+        <strong>Code &amp; inputs:</strong> all Quantum ESPRESSO and Yambo input files for these calculations, with a documented step-by-step workflow, are available on
+        <a href="https://github.com/jahidhasansagor-buet/High-Temperature-Radiative-Properties-of-Graphene"
+           style="color: var(--accent); text-decoration: none; font-weight: 500;">GitHub</a>.
+      </p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">One workflow. Any material, any temperature, full infrared response.</div>
+      <div class="paper-ref">A Comprehensive Framework for Predicting the Infrared Dielectric Function at Finite Temperatures from First Principles <span class="status">(in preparation)</span></div>
+
+      <h4>Problem</h4>
+      <p>The infrared dielectric function drives thermal radiation, sensing, and optoelectronics. Measuring it at every temperature is impractical. Computing it usually stops at 0&nbsp;K.</p>
+
+      <h4>What I did</h4>
+      <p>Built a validated first-principles pipeline: Quantum ESPRESSO electronic structure on thermally displaced atoms, Yambo many-body calculations on top. Handles metals, semiconductors, and 2D materials, with harmonic and anharmonic lattice effects.</p>
+
+      <h4>Result</h4>
+      <p>Tested on graphene, silicon, and gold. Computed silicon absorption at 300&nbsp;K lands on the experimental data. The static-lattice calculation misses everything below the band gap. The output is temperature-resolved dielectric data that heat transfer models can use directly.</p>
+
+      <figure class="paper-figure-wide">
+        <img src="figures/epsilon-workflow.svg" alt="Flowchart of the first-principles workflow: structure optimization and CPMD in Quantum ESPRESSO, harmonic and anharmonic phonons via DFPT, SDM, and ASDM, temperature-dependent Kohn-Sham calculations, and GW plus Bethe-Salpeter in Yambo, ending in the real and imaginary parts of the dielectric tensor">
+        <figcaption>The workflow: from structure optimization to the temperature-dependent dielectric tensor. Harmonic and anharmonic lattice treatments, with and without electron&ndash;hole interactions, feed the same final output.</figcaption>
+      </figure>
+
+      <div class="paper-figures">
+        <figure>
+          <img src="figures/epsilon-validation.png" alt="Computed silicon absorption at 300 K matching experimental data where the static lattice calculation fails">
+          <figcaption>Computed at 300&nbsp;K (blue) vs. experiment (red). The static-lattice curve (purple) fails below the gap.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/epsilon-temperature.png" alt="Imaginary part of the silicon dielectric function from 0 K to 750 K">
+          <figcaption>Silicon's optical response from 0 to 750&nbsp;K. This shift is what the framework captures.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> DFT, DFPT phonons, many-body perturbation theory, SDM/ASDM, Quantum ESPRESSO, EPW, Yambo, HPC</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">Heat jumps across gaps smaller than an atom. First results for 2D materials.</div>
+      <div class="paper-ref">Phonon Thermal Transport between Two in-Plane, Two-Dimensional Nanoribbons in the Extreme Near-Field Regime · Physical Review B 109, 235411 (2024) · <a href="https://doi.org/10.1103/PhysRevB.109.235411">DOI</a></div>
+
+      <h4>Problem</h4>
+      <p>At sub-nanometer separations, lattice vibrations carry heat straight across a vacuum gap. This sets thermal limits in heat-assisted magnetic recording and scanning probe microscopy, and it controls how cracks and voids block heat in materials. For 2D materials, no one had the numbers.</p>
+
+      <h4>What I did</h4>
+      <p>Modeled phonon conductance between graphene and silicene nanoribbons with the atomistic Green's function method, verified against three independent published benchmarks first.</p>
+
+      <h4>Result</h4>
+      <p>A 0.2&nbsp;Å gap, one fifth of a bond length, already cuts conductance by over an order of magnitude. The decay is exponential in three regimes set by the interatomic forces: e<sup>−10.0d</sup>, e<sup>−2.0d</sup>, then e<sup>−1.3d</sup>. Silicene overtakes graphene beyond 0.8&nbsp;Å because of its longer bonds.</p>
+
+      <div class="paper-figures">
+        <figure>
+          <img src="figures/prb2024-system.png" alt="Two in-plane graphene nanoribbons separated by a vacuum gap, with graphene and silicene lattice structures">
+          <figcaption>Two 2D nanoribbons, one sub-nanometer gap, solved with the atomistic Green's function method.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/prb2024-regimes.png" alt="Phonon conductance versus gap size showing three exponential decay regimes">
+          <figcaption>The key result: three exponential decay regimes, each governed by a different interatomic force.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> Atomistic Green's function method, Tersoff and Lennard-Jones potentials, MATLAB, HPC</p>
+      <p style="font-size: 0.9rem; margin-top: 0.6rem;"><strong>Code:</strong> documented Python scripts for the phonon transmission calculations behind this paper, with and without a vacuum gap, are available on <a href="https://github.com/jahidhasansagor-buet/computational-nanoscale-heat-transfer" style="color: var(--accent); text-decoration: none; font-weight: 500;">GitHub</a>. The original MATLAB implementation is available on request.</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Prior research: CFD</h2>
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">Spin the cylinders the right way and heat transfer goes up. Here is the recipe.</div>
+      <div class="paper-ref">Effect of Parameters of Rotating Cylinders on the Heat Transfer Advancement · Journal of Heat Transfer 144, 022601 (2022) · <a href="https://doi.org/10.1115/1.4053214">DOI</a></div>
+
+      <h4>Problem</h4>
+      <p>Enclosures with rotating parts show up in MEMS devices, nuclear systems, and food processing. Rotation direction, cylinder position, material, and speed all affect the heat transfer, but nobody had mapped which combination wins.</p>
+
+      <h4>What I did</h4>
+      <p>Finite element simulations of conjugate mixed convection in a differentially heated square cavity with two rotating conductive cylinders. Swept Re from 1 to 10,000 across four rotation combinations, three positions, five materials, and five speed ratios. Validated against two published studies first.</p>
+
+      <h4>Result</h4>
+      <p>Both cylinders counterclockwise wins: 2.63% more heat transfer than both clockwise. Position adds another 2.17% (cylinders at 0.75H). Rotating beats stationary by 4%. Cylinder material barely matters. The paper delivers Nu–Re correlations engineers can plug into design directly.</p>
+
+      <div class="paper-figures three">
+        <figure>
+          <img src="figures/cfd-rotating-schematic.png" alt="Square cavity with two vertically placed rotating cylinders, heated left wall and cooled right wall">
+          <figcaption>The setup: heated cavity, two rotating conductive cylinders.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-rotating-streamlines.png" alt="Streamline plot showing vortices generated by the two rotating cylinders inside the cavity">
+          <figcaption>Rotation reshapes the whole flow field.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-rotating-nu.png" alt="Average Nusselt number versus Reynolds number for three cylinder positions">
+          <figcaption>Nusselt number vs. Re: position 0.75H wins.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> Galerkin finite element method, conjugate mixed convection, code validation against literature</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">Which wall shape and material actually move more heat? We tested 16 combinations.</div>
+      <div class="paper-ref">Evaluation of Overall Thermal Performance for Conjugate Natural Convection in a Trapezoidal Cavity with Different Surface Corrugations · International Communications in Heat and Mass Transfer 130, 105772 (2022) · <a href="https://doi.org/10.1016/j.icheatmasstransfer.2021.105772">DOI</a> · 44 citations</div>
+
+      <h4>Problem</h4>
+      <p>Trapezoidal enclosures with thick, textured walls appear in solar ponds and food processing. Corrugation shape and wall material both change the heat transfer, but their combined effect had never been tested.</p>
+
+      <h4>What I did</h4>
+      <p>Finite element simulations of conjugate natural convection across four corrugation shapes (flat, rectangular, sinusoidal, triangular) and four wall materials (glass fiber, pinewood, plexiglas, dry concrete), Ra from 10³ to 10⁶. Validated against both numerical and experimental published data.</p>
+
+      <h4>Result</h4>
+      <p>The answer depends on what you optimize. For convection alone, flat surface with glass fiber wins. For overall conjugate performance, the ranking flips: triangular corrugation with dry concrete is best. Below Ra = 10⁴ conduction rules everything. A useful warning for designers: picking by one metric can give you the wrong wall.</p>
+
+      <div class="paper-figures three">
+        <figure>
+          <img src="figures/cfd-trap-schematic.png" alt="Four trapezoidal cavity geometries with flat, rectangular, sinusoidal, and triangular corrugated bottom walls">
+          <figcaption>Four corrugation shapes under test.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-trap-isotherms.png" alt="Isotherm plots for the four corrugation shapes at low and high Rayleigh numbers showing mushroom-shaped plumes">
+          <figcaption>Isotherms: convection plumes emerge at high Ra.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-trap-performance.png" alt="Overall thermal performance ratio versus Rayleigh number for four wall materials">
+          <figcaption>Overall performance: material choice flips the ranking.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> Galerkin finite element method, COMSOL Multiphysics, conjugate natural convection</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+    <!-- ===== PAPER START ===== -->
+    <div class="paper">
+      <div class="paper-title">Same cavity, same fluid, three ways to heat it. Only one wins at high Rayleigh number.</div>
+      <div class="paper-ref">Entropy Analysis due to Conjugate Natural Convection in Water-Al&#8322;O&#8323; Nanofluid Filled Prismatic Cavity · AIP Conference Proceedings 2324, 050022 (2021) · <a href="https://doi.org/10.1063/5.0037522">DOI</a></div>
+
+      <h4>Problem</h4>
+      <p>Prismatic enclosures appear in solar collectors, greenhouses, and electronics cooling. Filling them with nanofluid boosts heat transfer, but nobody had studied a nanofluid-filled prismatic cavity with a thick conducting wall, or asked which heating profile on that wall performs best.</p>
+
+      <h4>What I did</h4>
+      <p>Solved conjugate natural convection of water-Al&#8322;O&#8323; nanofluid in a prismatic cavity with a thick pinewood bottom wall using the Galerkin finite element method. Compared three heating profiles, isothermal, linear, and sinusoidal, across Ra from 10&#179; to 10&#8311;, tracking heat transfer and entropy generation together. Validated against published square-cavity results first.</p>
+
+      <h4>Result</h4>
+      <p>Sinusoidal heating delivers the highest heat transfer once convection takes over (Ra &#8805; 2&#215;10&#8309;), while linear heating always loses. Entropy generation stays flat up to Ra = 3&#215;10&#8308; and peaks for isothermal heating. So the best-mixing condition and the most-wasteful condition are not the same one, and that matters for design.</p>
+
+      <div class="paper-figures">
+        <figure>
+          <img src="figures/cfd-prismatic-schematic.png" alt="Prismatic cavity filled with water-Al2O3 nanofluid over a thick pinewood bottom wall, with three heating profiles applied at the wall">
+          <figcaption>The setup: prismatic cavity, thick conducting bottom wall, nanofluid inside, three heating profiles.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-prismatic-equations.png" alt="Non-dimensional continuity, momentum, and energy governing equations of the conjugate natural convection model">
+          <figcaption>The physics solved: continuity, momentum, and energy equations with effective nanofluid properties.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-prismatic-isotherms.png" alt="Isotherm plots for isothermal, linear, and sinusoidal heating at Rayleigh numbers of 10^3 and 10^7">
+          <figcaption>Isotherms for the three heating profiles. Higher Ra thins the thermal boundary layer.</figcaption>
+        </figure>
+        <figure>
+          <img src="figures/cfd-prismatic-performance.png" alt="Average Nusselt number and total entropy generation versus Rayleigh number for the three heating conditions">
+          <figcaption>The verdict: Nusselt number and entropy generation vs. Ra for each heating condition.</figcaption>
+        </figure>
+      </div>
+
+      <p class="paper-tools"><strong>Tools:</strong> Galerkin finite element method, nanofluid modeling, conjugate natural convection, entropy generation analysis</p>
+    </div>
+    <!-- ===== PAPER END ===== -->
+
+    <p class="paper-tools" style="max-width: 52rem;">These are selected papers. The complete list of journal and conference publications, with citation counts, is on <a href="https://scholar.google.com/citations?user=m-4lmIEAAAAJ" style="color: var(--accent); text-decoration: none; font-weight: 500;">Google Scholar</a>.</p>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Funding and presentations</h2>
+    <ul class="plain-list">
+      <li>Doctoral research funded by the National Science Foundation</li>
+      <li>Graduate Student Government Individual Grant Award, University of Maine, 2026</li>
+      <li>ASME IMECE 2023, New Orleans</li>
+      <li>8th BSME International Conference 2018, Dhaka</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Md Jahid Hasan Sagor · Last updated September 2026</div>
+</footer>
+
+</body>
+</html>
