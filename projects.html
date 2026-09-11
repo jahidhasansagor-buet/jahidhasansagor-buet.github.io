@@ -4,15 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects — Md Jahid Hasan Sagor</title>
-<meta name="description" content="Engineering projects: HVAC automation, control systems, mechanical design, and computational tools.">
+<meta name="description" content="Engineering projects in HVAC, controls, mechanical design, drafting, MATLAB, and machine learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-/* ============================================================
-   Md Jahid Hasan Sagor — personal website stylesheet
-   You normally never need to edit this file.
-   ============================================================ */
 :root {
   --ink: #22272b;
   --muted: #5a6570;
@@ -23,12 +20,15 @@
   --serif: "Fraunces", Georgia, serif;
   --sans: "IBM Plex Sans", -apple-system, sans-serif;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
 body {
   font-family: var(--sans);
   color: var(--ink);
@@ -36,172 +36,223 @@ body {
   line-height: 1.65;
   font-size: 1rem;
 }
+
 .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* ---------- Navigation ---------- */
 nav {
-  position: sticky; top: 0; z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background: rgba(255,255,255,0.94);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
 }
+
 .nav-inner {
-  max-width: 880px; margin: 0 auto; padding: 0.8rem 1.5rem;
-  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.nav-name { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+
+.nav-name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; padding: 0.2rem 0; border-bottom: 2px solid transparent; }
-.nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); }
-.nav-links a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
-
-/* ---------- Page headers ---------- */
-.page-head { padding: 3rem 0 0.5rem; }
-.page-head h1 { font-family: var(--serif); font-weight: 600; font-size: 2.2rem; line-height: 1.15; margin-bottom: 0.6rem; }
-.page-head p { color: var(--muted); max-width: 44rem; }
-
-/* ---------- Home hero ---------- */
-header.hero { padding: 4rem 0 3rem; }
-.hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; align-items: center; }
-.hero h1 { font-family: var(--serif); font-weight: 600; font-size: 2.6rem; line-height: 1.15; margin-bottom: 1rem; }
-.hero-role { font-size: 1.1rem; margin-bottom: 1rem; max-width: 34rem; }
-.hero-note { color: var(--muted); font-size: 0.95rem; max-width: 34rem; margin-bottom: 1.6rem; }
-.hero-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-.hero-links a {
-  display: inline-block; padding: 0.5rem 1rem;
-  border: 1px solid var(--line); border-radius: 3px;
-  color: var(--ink); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  padding: 0.2rem 0;
+  border-bottom: 2px solid transparent;
 }
-.hero-links a.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.hero-links a:hover, .hero-links a:focus-visible { border-color: var(--accent); color: var(--accent); }
-.hero-links a.primary:hover, .hero-links a.primary:focus-visible { background: #7a250f; color: #fff; }
-.gap-figure { width: 100%; }
-.gap-caption { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; text-align: center; }
+
+.nav-links a:hover,
+.nav-links a:focus-visible { color: var(--accent); }
+
+.nav-links a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Page header ---------- */
+.page-head { padding: 3rem 0 0.5rem; }
+.page-head h1 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+.page-head p { color: var(--muted); max-width: 44rem; }
 
 /* ---------- Sections ---------- */
 section { padding: 2.8rem 0; border-top: 1px solid var(--line); }
-h2 { font-family: var(--serif); font-weight: 600; font-size: 1.6rem; margin-bottom: 1.4rem; }
-h2::after {
-  content: ""; display: block; width: 3rem; margin-top: 0.5rem;
-  border-top: 2px solid var(--accent);
-  box-shadow: 0 4px 0 -2px var(--accent);
+
+.tag-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
 }
-h3 { font-family: var(--sans); font-weight: 600; font-size: 1.05rem; }
-p + p { margin-top: 0.9rem; }
-.lede { max-width: 46rem; }
 
-.research-topics { margin-top: 1.6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.4rem; }
-.topic h3 { margin-bottom: 0.3rem; }
-.topic p { color: var(--muted); font-size: 0.94rem; }
+.tag-nav a {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 500;
+}
 
-/* ---------- Publications ---------- */
-.pub-group { margin-bottom: 2.2rem; }
-.pub { padding-left: 1.1rem; border-left: 2px solid var(--line); margin-bottom: 1.3rem; max-width: 50rem; }
-.pub.highlight { border-left-color: var(--accent); }
-.pub-title { font-weight: 600; }
-.pub-title a { color: var(--ink); text-decoration: none; }
-.pub-title a:hover, .pub-title a:focus-visible { color: var(--accent); }
-.pub-meta { color: var(--muted); font-size: 0.9rem; }
-.pub-status { color: var(--accent); font-size: 0.85rem; font-weight: 500; }
-.pub-links { font-size: 0.88rem; margin-top: 0.15rem; }
-.pub-links a { color: var(--accent); text-decoration: none; }
-.pub-links a:hover, .pub-links a:focus-visible { text-decoration: underline; }
+.tag-nav a:hover,
+.tag-nav a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
 /* ---------- Projects ---------- */
-.project { border: 1px solid var(--line); border-radius: 4px; padding: 1.6rem 1.8rem; margin-bottom: 1.8rem; max-width: 52rem; }
-.project h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
-.project-context { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.8rem; }
-.project p { font-size: 0.96rem; }
-.project ul { margin: 0.6rem 0 0 1.2rem; font-size: 0.96rem; }
-.project li { margin-bottom: 0.3rem; }
-.project-tools { margin-top: 0.9rem; font-size: 0.88rem; color: var(--muted); }
-.project-tools strong { color: var(--ink); font-weight: 600; }
-.project-links { margin-top: 0.7rem; font-size: 0.9rem; }
-.project-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
-.project-links a:hover, .project-links a:focus-visible { text-decoration: underline; }
-.tag-nav { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; }
-.tag-nav a {
-  display: inline-block; padding: 0.3rem 0.85rem;
-  border: 1px solid var(--line); border-radius: 999px;
-  color: var(--muted); text-decoration: none; font-size: 0.86rem; font-weight: 500;
+.project {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1.6rem 1.8rem;
+  margin-bottom: 1.8rem;
+  max-width: 52rem;
+  scroll-margin-top: 4.5rem;
 }
-.tag-nav a:hover, .tag-nav a:focus-visible { border-color: var(--accent); color: var(--accent); }
-.project { scroll-margin-top: 4.5rem; }
-.project-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1rem 0 0.2rem; }
+
+.project h3 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+}
+
+.project-context {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.project p { font-size: 0.96rem; }
+.project p + p { margin-top: 0.75rem; }
+
+.project ul {
+  margin: 0.6rem 0 0 1.2rem;
+  font-size: 0.96rem;
+}
+
+.project li { margin-bottom: 0.3rem; }
+
+.project-tools {
+  margin-top: 0.9rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-tools strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.project-links {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+}
+
+.project-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible { text-decoration: underline; }
+
+.project-figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 1rem 0 0.2rem;
+}
+
 .project-figures figure { margin: 0; }
-.project-figures img, .project-figures iframe { width: 100%; height: 220px; border: 1px solid var(--line); border-radius: 4px; background: #fff; display: block; }
-.project-figures img { object-fit: contain; padding: 0.5rem; box-sizing: border-box; }
-.project-figures figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
-.project-figures.sheets img { height: auto; padding: 0; }
-.project-figures.grid4 { grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
-.project-figures.grid4 img { height: 130px; object-fit: cover; padding: 0; }
+
+.project-figures img,
+.project-figures iframe {
+  width: 100%;
+  height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+}
+
+.project-figures img {
+  object-fit: contain;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.project-figures figcaption {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  line-height: 1.45;
+}
+
+.project-figures.sheets img {
+  height: auto;
+  padding: 0;
+}
+
+.project-figures.grid4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+}
+
+.project-figures.grid4 img {
+  height: 130px;
+  object-fit: cover;
+  padding: 0;
+}
+
 .project-figures.grid4 figcaption { text-align: center; }
 
-/* ---------- Research paper entries ---------- */
-.paper { margin-bottom: 3.2rem; max-width: 52rem; }
-.paper-title { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; line-height: 1.3; margin-bottom: 0.3rem; }
-.paper-ref { color: var(--muted); font-size: 0.92rem; margin-bottom: 1rem; }
-.paper-ref a { color: var(--accent); text-decoration: none; }
-.paper-ref a:hover, .paper-ref a:focus-visible { text-decoration: underline; }
-.paper-ref .status { color: var(--accent); font-weight: 500; }
-.paper h4 { font-family: var(--sans); font-weight: 600; font-size: 0.98rem; margin: 1.1rem 0 0.25rem; }
-.paper p { font-size: 0.97rem; }
-.paper-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.4rem 0 0.4rem; max-width: 44rem; }
-.paper-figures figure { margin: 0; }
-.paper-figures img { width: 100%; height: 240px; object-fit: contain; border: 1px solid var(--line); border-radius: 4px; background: #fff; padding: 0.5rem; box-sizing: border-box; }
-.paper-figures figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
-.paper-tools { margin-top: 1rem; font-size: 0.9rem; color: var(--muted); padding-top: 0.7rem; border-top: 1px solid var(--line); }
-.paper-tools strong { color: var(--ink); font-weight: 600; }
-@media (max-width: 720px) {
-  .paper-figures { grid-template-columns: 1fr; }
+/* ---------- Footer ---------- */
+footer {
+  padding: 1.4rem 0 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
 }
-
-/* ---------- Experience ---------- */
-.job { display: grid; grid-template-columns: 155px 1fr; gap: 1.5rem; margin-bottom: 1.8rem; max-width: 50rem; }
-.job-when { color: var(--muted); font-size: 0.9rem; padding-top: 0.15rem; }
-.job-org { color: var(--muted); font-size: 0.94rem; margin-bottom: 0.35rem; }
-.job ul { margin: 0.4rem 0 0 1.1rem; }
-.job li { margin-bottom: 0.3rem; font-size: 0.95rem; }
-
-/* ---------- Skills / education / honors ---------- */
-.skill-rows { max-width: 48rem; }
-.skill-row { display: grid; grid-template-columns: 200px 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
-.skill-row:last-child { border-bottom: none; }
-.skill-row dt { font-weight: 600; font-size: 0.94rem; }
-.skill-row dd { color: var(--muted); font-size: 0.94rem; }
-.edu { margin-bottom: 1rem; max-width: 46rem; }
-.edu-degree { font-weight: 600; }
-.edu-meta { color: var(--muted); font-size: 0.92rem; }
-.plain-list { margin-left: 1.2rem; max-width: 46rem; }
-.plain-list li { margin-bottom: 0.4rem; font-size: 0.96rem; }
-
-/* ---------- Contact / footer ---------- */
-.contact-band { background: var(--accent-soft); border-top: 1px solid var(--line); }
-.contact-band .wrap { padding-top: 2.8rem; padding-bottom: 2.8rem; }
-.contact-band h2 { margin-bottom: 0.8rem; }
-.contact-band p { max-width: 42rem; }
-.contact-links { margin-top: 1.2rem; display: flex; gap: 1.6rem; flex-wrap: wrap; }
-.contact-links a { color: var(--accent); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; }
-.contact-links a:hover, .contact-links a:focus-visible { border-bottom-color: var(--accent); }
-footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 720px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .gap-figure { max-width: 340px; margin: 0 auto; display: block; }
-  .research-topics { grid-template-columns: 1fr; }
-  .job { grid-template-columns: 1fr; gap: 0.2rem; }
-  .skill-row { grid-template-columns: 1fr; gap: 0.1rem; }
-  .hero h1 { font-size: 2.1rem; }
   .page-head h1 { font-size: 1.8rem; }
-  .project { padding: 1.2rem 1.2rem; }
+  .project { padding: 1.2rem; }
   .project-figures { grid-template-columns: 1fr; }
   .project-figures.grid4 { grid-template-columns: 1fr 1fr; }
 }
-
 </style>
 </head>
+
 <body>
 
 <nav aria-label="Main">
@@ -220,7 +271,8 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 
 <div class="page-head wrap">
   <h1>Projects</h1>
-  <p>Hands-on engineering work: what the problem was, how I solved it, and what it produced.</p>
+  <p>Selected engineering projects in HVAC, controls, mechanical design, drafting, and computational tools.</p>
+
   <div class="tag-nav" aria-label="Jump to a project">
     <a href="#autocad">AutoCAD</a>
     <a href="#solidworks">SolidWorks</a>
@@ -234,200 +286,286 @@ footer { padding: 1.4rem 0 2rem; color: var(--muted); font-size: 0.85rem; }
 <section>
   <div class="wrap">
 
-    <!-- ============================================================
-         PROJECT BLOCK — to add a project, copy from START to END,
-         paste it below, and edit the text. To delete a project,
-         delete everything from START to END.
-         ============================================================ -->
     <!-- PROJECT START -->
     <div class="project" id="autocad">
-      <h3>Engineering Drawing Portfolio (AutoCAD 2026)</h3>
+      <h3>Engineering Drawing Portfolio — AutoCAD 2026</h3>
       <div class="project-context">Independent work · July–August 2026</div>
-      <p>Three 2D drawings completed to keep my drafting skills current alongside my Ph.D. research:</p>
+
+      <p>
+        Independent drafting portfolio covering two mechanical drawings and one residential floor plan. The work includes orthographic and sectional views, assembly drawings, dimensioning, hatching, layers, blocks, and drawing-sheet preparation.
+      </p>
+
       <ul>
-        <li><strong>IC engine crankshaft</strong> — four-throw crankshaft detail drawing with two cross sections (A-A, B-B) through the webs and pins, flywheel bolt circle, and diametral, radial, and angular dimensioning.</li>
-        <li><strong>Screw jack detail and assembly</strong> — seven component details with material specifications (cast iron, mild steel, gun metal, cast steel) and a half-sectional front view of the assembled jack.</li>
-        <li><strong>Residential floor plan</strong> — two-bedroom single-storey plan with door swings, wall hatching, furniture and fixture blocks, and feet-and-inches dimension strings on all four sides.</li>
+        <li><strong>IC engine crankshaft</strong> — four-throw crankshaft detail with sections A-A and B-B, flywheel bolt circle, centerlines, and linear, diametral, radial, and angular dimensions.</li>
+        <li><strong>Screw jack</strong> — seven component drawings with material specifications and a half-sectional view of the complete assembly.</li>
+        <li><strong>Residential floor plan</strong> — two-bedroom single-storey layout with wall hatching, door swings, furniture and fixture blocks, parking, landscaping, and dimensions on all sides.</li>
       </ul>
 
       <div class="project-figures sheets">
         <figure>
-          <img src="figures/autocad-crankshaft.png" alt="Detail drawing of a four-throw IC engine crankshaft with two cross sections and full dimensioning">
-          <figcaption>Crankshaft detail: side view with A-A and B-B cross sections and the flywheel bolt circle.</figcaption>
+          <img src="figures/autocad-crankshaft.png" alt="Detail drawing of a four-throw IC engine crankshaft with cross sections and dimensions">
+          <figcaption>Four-throw crankshaft detail with two sectional views and full dimensioning.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/autocad-screw-jack.png" alt="Screw jack drawing with seven dimensioned component details and a half-sectional assembly view">
-          <figcaption>Screw jack: seven component details with materials, plus the half-sectional assembly.</figcaption>
+          <img src="figures/autocad-screw-jack.png" alt="Screw jack component details and half-sectional assembly drawing">
+          <figcaption>Seven screw-jack components and the half-sectional assembly view.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/autocad-floor-plan.png" alt="Two-bedroom residential floor plan with wall hatching, door swings, furniture blocks, and dimension strings">
-          <figcaption>Floor plan: two-bedroom layout with hatching, blocks, and dimension strings on all sides.</figcaption>
+          <img src="figures/autocad-floor-plan.png" alt="Two-bedroom residential floor plan with dimensions, furniture, parking and landscaping">
+          <figcaption>Residential floor plan with room layout, blocks, hatching, and dimension strings.</figcaption>
         </figure>
       </div>
 
-      <p class="project-tools"><strong>Skills:</strong> orthographic and sectional views, assembly drawings, dimensioning, hatching, layer management, blocks, title-block preparation</p>
-      <div class="project-links"><a href="https://github.com/jahidhasansagor-buet/AutoCAD-Engineering-Drawings">Original .dwg and .pdf files on GitHub</a> &nbsp;·&nbsp; <a href="Engineering_Drawing_Portfolio.pdf">Portfolio PDF</a></div>
+      <p class="project-tools">
+        <strong>Skills:</strong> AutoCAD, 2D drafting, orthographic and sectional views, assembly drawings, dimensioning, hatching, layers, blocks
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/jahidhasansagor-buet/AutoCAD-Engineering-Drawings">Original .dwg and .pdf files on GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="Engineering_Drawing_Portfolio.pdf">Portfolio PDF</a>
+      </div>
     </div>
     <!-- PROJECT END -->
+
 
     <!-- PROJECT START -->
     <div class="project" id="solidworks">
       <h3>Automatic Juice Making Machine</h3>
-      <div class="project-context">BUET</div>
-      <p>Designed and fabricated a machine for effortless lime juice extraction using a rotating squeezing mechanism. Rotating parts were designed in SolidWorks and manufactured by molding and aluminium casting in the BUET foundry lab, followed by functional testing of the working prototype.</p>
+      <div class="project-context">BUET · Mechanical design and fabrication project</div>
+
+      <p>
+        Designed and fabricated a lime-juice machine based on a rotating squeezing mechanism. I modeled the rotating parts in SolidWorks, prepared the geometry for manufacturing, and produced the parts by molding and aluminum casting in the BUET foundry lab. The cast parts were then assembled into the machine and tested as a working prototype.
+      </p>
 
       <div class="project-figures">
         <figure>
-          <img src="figures/juice-rotating-parts.png" alt="SolidWorks model of the rotating squeezing part of the juice machine">
-          <figcaption>The rotating squeezing part, designed in SolidWorks before casting.</figcaption>
+          <img src="figures/juice-rotating-parts.png" alt="SolidWorks model of the rotating squeezing component">
+          <figcaption>SolidWorks model of the rotating squeezing component.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/juice-wooden-pattern.jpg" alt="Split wooden pattern of the rotating part, hand-made for the sand mold">
-          <figcaption>Split wooden pattern of the rotating part, made for the sand mold before casting.</figcaption>
+          <img src="figures/juice-wooden-pattern.jpg" alt="Split wooden pattern prepared for sand casting">
+          <figcaption>Split wooden pattern prepared for the sand mold.</figcaption>
         </figure>
+
         <figure>
-          <iframe src="https://drive.google.com/file/d/1RB_dKaMb8zN7mepKtaa1tOMWfE3xG2wM/preview" title="Automatic juice machine — fabricated prototype" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          <figcaption>The fabricated machine: cast aluminium parts assembled on the frame.</figcaption>
+          <iframe src="https://drive.google.com/file/d/1RB_dKaMb8zN7mepKtaa1tOMWfE3xG2wM/preview"
+                  title="Automatic juice machine fabricated prototype"
+                  allow="autoplay"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+          <figcaption>Fabricated machine with the cast aluminum components installed.</figcaption>
         </figure>
+
         <figure>
-          <iframe src="https://drive.google.com/file/d/1wG6ZFQpPD4jLIzJGYAm4lbnNQ1_BDub2/preview" title="Automatic juice machine — test run" allow="autoplay" allowfullscreen loading="lazy"></iframe>
-          <figcaption>Test run of the working prototype.</figcaption>
+          <iframe src="https://drive.google.com/file/d/1wG6ZFQpPD4jLIzJGYAm4lbnNQ1_BDub2/preview"
+                  title="Automatic juice machine test run"
+                  allow="autoplay"
+                  allowfullscreen
+                  loading="lazy"></iframe>
+          <figcaption>Prototype during functional testing.</figcaption>
         </figure>
       </div>
 
-      <p class="project-tools"><strong>Skills:</strong> SolidWorks, mechanical design, manufacturing, casting, prototyping</p>
+      <p class="project-tools">
+        <strong>Skills:</strong> SolidWorks, mechanical design, sand molding, aluminum casting, fabrication, prototyping
+      </p>
     </div>
     <!-- PROJECT END -->
 
+
     <!-- PROJECT START -->
     <div class="project" id="hvac-load">
-      <h3>Cooling Load Calculation of a Single-Zone Conditioned Space Using the CLTD/CLF Method</h3>
-      <div class="project-context">Independent Project · September 2026</div>
-      <p><strong>The problem:</strong> before the air-conditioning capacity for a single-zone conditioned space can be estimated, its peak cooling load has to be calculated.</p>
-      <p><strong>What I did:</strong> performed a complete cooling-load calculation for a 10&nbsp;m &times; 10&nbsp;m &times; 3&nbsp;m conditioned space at the 5&nbsp;PM design hour using the CLTD/CLF method. Calculated U-values for the roof, exterior walls, and brick walls from ASHRAE thermal-resistance data. Applied latitude, month, and outdoor-temperature corrections to the tabulated CLTD values for sun-exposed surfaces. Calculated solar heat gain through the west-facing glazing using the shading coefficient, maximum solar heat gain factor, and cooling load factor. Outdoor-air sensible and latent loads were included at 1&nbsp;ACH, along with internal heat gains from lighting, occupants, and equipment.</p>
-      <p><strong>Result:</strong> the calculated peak cooling load was 13.25&nbsp;kW (3.77&nbsp;TR). Lighting and west-facing glazing were among the major contributors to the total load. With a 10% design allowance, the estimated cooling requirement was approximately 4.1&nbsp;TR, and a nominal 4.5&nbsp;TR unit was selected for the project. A floor-area rule-of-thumb estimate gave 5.4&ndash;7.2&nbsp;TR, showing the difference between a simplified estimate and a component-based cooling-load calculation.</p>
+      <h3>Single-Zone Cooling Load Calculation — CLTD/CLF Method</h3>
+      <div class="project-context">Independent project · September 2026</div>
+
+      <p>
+        <strong>Problem:</strong> estimate the peak cooling load and required air-conditioning capacity for a 100&nbsp;m² single-zone space at the 5&nbsp;PM design condition.
+      </p>
+
+      <p>
+        <strong>What I did:</strong> carried out a component-by-component CLTD/CLF calculation. I calculated roof and wall U-values from construction resistances, corrected the tabulated CLTD values for the design date and outdoor conditions, and included conductive and solar gains through the glazing. The calculation also includes sensible and latent outdoor-air loads at 1&nbsp;ACH and internal gains from lighting, occupants, and equipment.
+      </p>
+
+      <p>
+        <strong>Result:</strong> the peak load was 13.25&nbsp;kW (3.77&nbsp;TR). With the 10% design allowance used in the project, the required capacity was about 4.1&nbsp;TR, so a nominal 4.5&nbsp;TR unit was selected. The west-facing glass contributed about 2.43&nbsp;kW of solar load, and lighting was the largest single load in the final breakdown.
+      </p>
 
       <div class="project-figures">
         <figure>
-          <img src="figures/hvac-load-plan.png" alt="Plan of the conditioned space showing sunlit curtain walls, brick partitions, windows, and surrounding conditions">
-          <figcaption>Conditioned-space layout and envelope construction used for the cooling-load calculation.</figcaption>
+          <img src="figures/hvac-load-plan.png" alt="Plan of the conditioned space and surrounding wall conditions">
+          <figcaption>Room layout, envelope construction, glazing, and surrounding conditions used in the calculation.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/hvac-load-summary.png" alt="Load summary table showing sensible and latent components totalling 13.25 kW at the design hour">
+          <img src="figures/hvac-load-summary.png" alt="Cooling load summary showing sensible and latent components">
           <figcaption>Cooling-load breakdown at the 5&nbsp;PM design condition.</figcaption>
         </figure>
       </div>
 
-      <p class="project-tools"><strong>Skills:</strong> cooling load calculation, CLTD/CLF method, ASHRAE tables, U-value buildup, psychrometrics, equipment sizing</p>
-      <div class="project-links"><a href="HVAC_Cooling_Load_Project.pdf">Full report (PDF)</a></div>
+      <p class="project-tools">
+        <strong>Skills:</strong> cooling-load calculation, CLTD/CLF method, ASHRAE tables, U-value calculation, psychrometrics, equipment sizing
+      </p>
+
+      <div class="project-links">
+        <a href="HVAC_Cooling_Load_Project.pdf">Full report (PDF)</a>
+      </div>
     </div>
     <!-- PROJECT END -->
+
 
     <!-- PROJECT START -->
     <div class="project" id="automation">
-      <h3>Temperature-Based Chilled Water Automation and Control System</h3>
+      <h3>Chilled-Water Automation and Process Control</h3>
       <div class="project-context">Eskayef Pharmaceuticals Ltd. · 2020</div>
-      <p><strong>The problem:</strong> chilled water supply to a process line was controlled by manual valve operation, causing temperature fluctuations and constant operator attention.</p>
-      <p><strong>What I did:</strong> designed and built an automated control system using an Autonics TC4W temperature controller actuating a relay and solenoid valve — automatically opening or closing the chilled water line when process temperature crossed the setpoint. Separately, for a stepper-motor-driven peristaltic filling pump whose driver lacked a suitable control signal, I designed an LM555-based astable multivibrator circuit (resistors, potentiometer, capacitors, transistor) generating a stable 3&nbsp;kHz pulse to drive the motor.</p>
-      <p><strong>Result:</strong> replaced manual valve operation, reduced temperature fluctuations, and got the filling pump running with a purpose-built control circuit.</p>
+
+      <p>
+        A process chilled-water line was being controlled manually, which required frequent operator attention and allowed the process temperature to fluctuate. I built a simple automatic control using an Autonics TC4W temperature controller, relay, and solenoid valve so that chilled-water flow responded directly to the temperature setpoint.
+      </p>
+
+      <p>
+        I also worked on a stepper-motor-driven peristaltic filling pump whose driver did not have a suitable pulse input available. I built an LM555 astable multivibrator circuit to generate an approximately 3&nbsp;kHz pulse signal for the stepper-motor driver.
+      </p>
+
+      <p>
+        The chilled-water control replaced routine manual valve operation, and the custom pulse circuit provided the control signal needed to run the filling pump.
+      </p>
 
       <div class="project-figures grid4">
         <figure>
-          <img src="figures/automation-pid-controller.png" alt="Autonics TC4W temperature controller displaying process temperature">
-          <figcaption>TC4W PID controller</figcaption>
+          <img src="figures/automation-pid-controller.png" alt="Autonics TC4W temperature controller">
+          <figcaption>TC4W controller</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/automation-relay.png" alt="Electromechanical relay used to switch the solenoid valve">
+          <img src="figures/automation-relay.png" alt="Electromechanical relay">
           <figcaption>Relay</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/automation-solenoid-valve.png" alt="Brass solenoid valve for the chilled water line">
+          <img src="figures/automation-solenoid-valve.png" alt="Solenoid valve for chilled-water control">
           <figcaption>Solenoid valve</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/automation-breaker.png" alt="Circuit breaker protecting the control system">
+          <img src="figures/automation-breaker.png" alt="Circuit breaker for the control system">
           <figcaption>Breaker</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/automation-stepper-driver.png" alt="Stepper motor driver and power supply unit">
-          <figcaption>Stepper motor driver</figcaption>
+          <img src="figures/automation-stepper-driver.png" alt="Stepper motor driver and power supply">
+          <figcaption>Stepper driver</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/automation-control-circuit.png" alt="Wired control circuit with driver terminals and DIP switch settings">
-          <figcaption>Control circuit wiring</figcaption>
+          <img src="figures/automation-control-circuit.png" alt="Control circuit wiring">
+          <figcaption>Control wiring</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/automation-stepper-motor.png" alt="Stepper motor driving the peristaltic filling pump">
+          <img src="figures/automation-stepper-motor.png" alt="Stepper motor used with the peristaltic filling pump">
           <figcaption>Stepper motor</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/automation-multivibrator.png" alt="LM555 astable multivibrator circuit built on a perfboard">
-          <figcaption>LM555 astable multivibrator</figcaption>
+          <img src="figures/automation-multivibrator.png" alt="LM555 astable multivibrator circuit">
+          <figcaption>LM555 pulse circuit</figcaption>
         </figure>
       </div>
 
-      <p class="project-tools"><strong>Skills:</strong> PID control, HVAC, process automation, instrumentation, control systems, circuit design</p>
+      <p class="project-tools">
+        <strong>Skills:</strong> temperature control, process automation, instrumentation, relay logic, solenoid valves, stepper-motor control, basic circuit design
+      </p>
     </div>
     <!-- PROJECT END -->
+
 
     <!-- PROJECT START -->
     <div class="project" id="matlab">
-      <h3>Digital Psychrometric Chart in MATLAB</h3>
-      <div class="project-context">BUET · Group project with Md. Shahriar, Surjo, and Eskem</div>
-      <p><strong>The problem:</strong> reading air properties off a paper psychrometric chart is slow and error-prone for repeated HVAC calculations.</p>
-      <p><strong>What I did:</strong> developed a MATLAB program that computes all psychrometric air properties from a given dry-bulb and wet-bulb temperature, and automatically determines what environmental change is needed to bring conditions into the comfort or required zone.</p>
+      <h3>Digital Psychrometric Calculator in MATLAB</h3>
+      <div class="project-context">BUET · Numerical Analysis group project · 2016</div>
+
+      <p>
+        Built a MATLAB program and graphical interface that calculates psychrometric properties from dry-bulb and wet-bulb temperature. The program returns relative humidity, humidity ratio, dew-point temperature, specific volume, and enthalpy.
+      </p>
+
+      <p>
+        Saturation-pressure data were taken from thermodynamic property tables and interpolated for use between tabulated temperatures. The project combined the psychrometric equations, data lookup and interpolation, and a simple GUI so the calculations could be repeated without reading each property manually from a printed chart.
+      </p>
 
       <div class="project-figures">
         <figure>
-          <img src="figures/psychro-gui.png" alt="MATLAB GUI showing computed relative humidity, humidity ratio, dew point, specific volume, and enthalpy from dry-bulb and wet-bulb inputs">
-          <figcaption>The result: enter dry-bulb and wet-bulb temperature, get all five air properties at once.</figcaption>
+          <img src="figures/psychro-gui.png" alt="MATLAB graphical interface for psychrometric calculations">
+          <figcaption>MATLAB interface showing the calculated air properties from dry- and wet-bulb temperatures.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/psychro-main-code.png" alt="Main MATLAB code computing humidity ratio, relative humidity, and dew point from the input temperatures">
-          <figcaption>Core calculation: property equations plus a lookup on tabulated saturation data.</figcaption>
+          <img src="figures/psychro-main-code.png" alt="MATLAB code used to calculate psychrometric properties">
+          <figcaption>Main calculation routine for humidity ratio, relative humidity, dew point, enthalpy, and specific volume.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/psychro-interpolation.png" alt="MATLAB function performing linear interpolation of saturation pressure between table entries">
-          <figcaption>Interpolation function for saturation pressure between table entries.</figcaption>
+          <img src="figures/psychro-interpolation.png" alt="MATLAB interpolation function for saturation pressure">
+          <figcaption>Interpolation routine used between tabulated saturation-pressure values.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/psychro-interp-data.png" alt="Spline interpolation of saturation data digitized from thermodynamic property tables">
-          <figcaption>Property tables from the books, densified by spline interpolation.</figcaption>
+          <img src="figures/psychro-interp-data.png" alt="Spline interpolation of thermodynamic saturation data">
+          <figcaption>Saturation-pressure data from the property tables with spline interpolation.</figcaption>
         </figure>
       </div>
 
-      <p class="project-tools"><strong>Skills:</strong> MATLAB, psychrometrics, HVAC analysis, thermodynamics</p>
-      <div class="project-links"><a href="Digital_Psychrometric_Chart_Report.pdf">Full report (PDF)</a></div>
+      <p class="project-tools">
+        <strong>Skills:</strong> MATLAB, psychrometrics, thermodynamics, numerical interpolation, GUI development
+      </p>
+
+      <div class="project-links">
+        <a href="Digital_Psychrometric_Chart_Report.pdf">Full report (PDF)</a>
+      </div>
     </div>
     <!-- PROJECT END -->
 
+
     <!-- PROJECT START -->
     <div class="project" id="machine-learning">
-      <h3>Machine Learning Projects</h3>
+      <h3>Selected Machine Learning Projects</h3>
       <div class="project-context">Independent work · GitHub repository</div>
-      <p>A public repository of machine learning projects covering clustering, classification, regression, and time-series forecasting:</p>
+
+      <p>
+        Small projects used to practice data preparation, model development, visualization, and prediction across several types of machine-learning problems.
+      </p>
+
       <ul>
-        <li><strong>Mall customer segmentation</strong> — K-means clustering of customers by annual income and spending score.</li>
-        <li><strong>Stock price forecasting app</strong> — time-series forecasting with Prophet, with confidence intervals on the forecast.</li>
-        <li><strong>Brain tumor classifier</strong> — MRI image classification using a Vision Transformer.</li>
-        <li><strong>Fake news classifier</strong> — text classification of news articles.</li>
+        <li><strong>Mall customer segmentation</strong> — K-means clustering using annual income and spending score.</li>
+        <li><strong>Stock price forecasting</strong> — time-series forecasting with Prophet, including forecast intervals.</li>
+        <li><strong>Brain tumor classification</strong> — MRI image classification using a Vision Transformer.</li>
+        <li><strong>Fake news classification</strong> — text classification of news articles.</li>
         <li><strong>House price prediction</strong> — regression on housing data.</li>
-        <li><strong>Used car price prediction</strong> — regression on vehicle listings.</li>
+        <li><strong>Used car price prediction</strong> — regression using vehicle listing data.</li>
       </ul>
 
       <div class="project-figures">
         <figure>
-          <img src="figures/ml-customer-segments.png" alt="K-means clustering of mall customers into five segments by annual income and spending score, with centroids marked">
-          <figcaption>Customer segments from K-means (K&nbsp;=&nbsp;5), with cluster centroids marked.</figcaption>
+          <img src="figures/ml-customer-segments.png" alt="K-means clustering of mall customers into five segments">
+          <figcaption>K-means customer segmentation with five clusters and their centroids.</figcaption>
         </figure>
+
         <figure>
-          <img src="figures/ml-stock-forecast.png" alt="Prophet forecast of AAPL stock price 90 days ahead with confidence interval over historical data">
-          <figcaption>90-day price forecast with Prophet, with confidence interval over the historical series.</figcaption>
+          <img src="figures/ml-stock-forecast.png" alt="Prophet stock price forecast with forecast interval">
+          <figcaption>Prophet time-series forecast with the historical series and forecast interval.</figcaption>
         </figure>
       </div>
 
-      <p class="project-tools"><strong>Skills:</strong> Python, machine learning, K-means clustering, time-series forecasting, deep learning, data analysis</p>
-      <div class="project-links"><a href="https://github.com/jahidhasansagor-buet/machine-learning-projects">All projects with code on GitHub</a></div>
+      <p class="project-tools">
+        <strong>Skills:</strong> Python, scikit-learn, PyTorch, clustering, regression, classification, time-series forecasting, data analysis
+      </p>
+
+      <div class="project-links">
+        <a href="https://github.com/jahidhasansagor-buet/machine-learning-projects">Projects and code on GitHub</a>
+      </div>
     </div>
     <!-- PROJECT END -->
 
